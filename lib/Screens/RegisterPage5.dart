@@ -53,7 +53,7 @@ class _RegisterPage5State extends State<RegisterPage5> {
                       child: Text(
                         'More Details',
                         style: TextStyle(
-                          color: Color.fromRGBO(0, 0, 0, 0.75),
+                          color: const Color.fromRGBO(0, 0, 0, 0.75),
                           fontFamily: 'Source Serif Pro',
                           fontWeight: FontWeight.w600,
                           fontSize: 28.sp,
@@ -67,7 +67,7 @@ class _RegisterPage5State extends State<RegisterPage5> {
                       Align(
                         alignment: Alignment.topLeft,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 32.0),
+                          padding: const EdgeInsets.only(left: 32.0),
                           child: Text(
                             'Words that describe your business',
                             style: TextStyle(
@@ -133,8 +133,8 @@ class _RegisterPage5State extends State<RegisterPage5> {
                                           item,
                                           style: TextStyle(
                                               fontSize: 14.sp,
-                                              color:
-                                                  Color.fromRGBO(0, 0, 0, 0.6)),
+                                              color: const Color.fromRGBO(
+                                                  0, 0, 0, 0.6)),
                                         ),
                                       ))
                                   .toList(),
@@ -145,7 +145,7 @@ class _RegisterPage5State extends State<RegisterPage5> {
                       ),
                       SizedBox(height: 15.h),
                       Padding(
-                        padding: EdgeInsets.only(left: 32.0),
+                        padding: const EdgeInsets.only(left: 32.0),
                         child: Align(
                           alignment: Alignment.topLeft,
                           child: Text(
@@ -175,7 +175,7 @@ class _RegisterPage5State extends State<RegisterPage5> {
                             Positioned.fill(
                               child: Icon(
                                 Icons.image_outlined,
-                                color: Color.fromRGBO(0, 0, 0, 0.4),
+                                color: const Color.fromRGBO(0, 0, 0, 0.4),
                                 size: 50.sp,
                               ),
                             ),

@@ -30,7 +30,7 @@ class RegisterPage1 extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: 25.0.h),
+                    padding: EdgeInsets.only(top: 25.h),
                     child: Center(
                         child: Text(
                       'Register',
@@ -38,7 +38,7 @@ class RegisterPage1 extends StatelessWidget {
                           color: const Color.fromRGBO(0, 0, 0, 0.75),
                           fontFamily: 'Source Serif Pro',
                           fontWeight: FontWeight.w600,
-                          fontSize: 27.sp),
+                          fontSize: 28.sp),
                     )),
                   ),
                   SizedBox(height: 15.h),
