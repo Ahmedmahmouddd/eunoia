@@ -35,7 +35,11 @@ class RegisterPage2 extends StatelessWidget {
             },
           )),
           const SizedBox(height: 22),
-          Center(child: ReverseCustomButton(title: 'User')),
+          Center(
+              child: ReverseCustomButton(
+            title: 'User',
+            onTap: () {},
+          )),
           const SizedBox(height: 150),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

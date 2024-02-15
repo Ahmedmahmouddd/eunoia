@@ -1,5 +1,6 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, sized_box_for_whitespace
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../Constants/Constants.dart';
 import '../Widgets/RegisterStepperContainer.dart';
@@ -12,31 +13,33 @@ class RegisterPage5 extends StatefulWidget {
 }
 
 class _RegisterPage5State extends State<RegisterPage5> {
+  @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: KprimaryBeige,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 90),
-              child: Image.asset('assets/logo 1.png'),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(top: 67.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  RegisterStepperContainer(color: KprimaryGreen),
-                  SizedBox(width: 12),
-                  RegisterStepperContainer(color: KprimaryGreen),
-                  SizedBox(width: 12),
-                  RegisterStepperContainer(color: KprimaryGreen),
-                ],
-              ),
+            Container(
+                height: screenHeight * 0.25,
+                child: Image.asset('assets/logo 1.png')),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                RegisterStepperContainer(
+                    height: screenHeight * 0.005, color: KprimaryGreen),
+                SizedBox(width: 11.w),
+                RegisterStepperContainer(
+                    height: screenHeight * 0.005, color: KprimaryGreen),
+                SizedBox(width: 11.w),
+                RegisterStepperContainer(
+                    height: screenHeight * 0.005, color: KprimaryGreen),
+              ],
             ),
             Container(
-              height: 560,
+              height: screenHeight * 0.745,
               width: double.infinity,
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -44,8 +47,8 @@ class _RegisterPage5State extends State<RegisterPage5> {
               ),
               child: Column(
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 25.0),
+                  Padding(
+                    padding: EdgeInsets.only(top: 24.h),
                     child: Center(
                       child: Text(
                         'More Details',
@@ -53,31 +56,30 @@ class _RegisterPage5State extends State<RegisterPage5> {
                           color: Color.fromRGBO(0, 0, 0, 0.75),
                           fontFamily: 'Source Serif Pro',
                           fontWeight: FontWeight.w600,
-                          fontSize: 30,
+                          fontSize: 28.sp,
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 5),
+                  SizedBox(height: 5.h),
                   Column(
                     children: [
-                      const Align(
+                      Align(
                         alignment: Alignment.topLeft,
                         child: Padding(
                           padding: EdgeInsets.only(left: 32.0),
                           child: Text(
                             'Words that describe your business',
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 14.5.sp,
                                 fontFamily: 'Koh Santepheap',
                                 fontWeight: FontWeight.w500),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 10),
+                      SizedBox(height: 8.h),
                       Container(
-                        width: 335,
-                        height: 60,
+                        width: screenWidth * 0.85,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
@@ -129,8 +131,8 @@ class _RegisterPage5State extends State<RegisterPage5> {
                                         value: item,
                                         child: Text(
                                           item,
-                                          style: const TextStyle(
-                                              fontSize: 14,
+                                          style: TextStyle(
+                                              fontSize: 14.sp,
                                               color:
                                                   Color.fromRGBO(0, 0, 0, 0.6)),
                                         ),
@@ -141,24 +143,24 @@ class _RegisterPage5State extends State<RegisterPage5> {
                           ],
                         ),
                       ),
-                      const SizedBox(height: 15),
-                      const Padding(
+                      SizedBox(height: 15.h),
+                      Padding(
                         padding: EdgeInsets.only(left: 32.0),
                         child: Align(
                           alignment: Alignment.topLeft,
                           child: Text(
                             'Upload your cover photo',
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 14.5.sp,
                                 fontFamily: 'Koh Santepheap',
                                 fontWeight: FontWeight.w500),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 10),
+                      SizedBox(height: 8.h),
                       Container(
-                        width: 335,
-                        height: 210,
+                        width: screenWidth * 0.85,
+                        height: screenWidth * 0.5,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius:
@@ -170,34 +172,34 @@ class _RegisterPage5State extends State<RegisterPage5> {
                         ),
                         child: Stack(
                           children: [
-                            const Positioned.fill(
+                            Positioned.fill(
                               child: Icon(
                                 Icons.image_outlined,
                                 color: Color.fromRGBO(0, 0, 0, 0.4),
-                                size: 50,
+                                size: 50.sp,
                               ),
                             ),
                             Positioned(
-                                bottom: 5,
-                                right: 5,
+                                bottom: 5.sp,
+                                right: 5.sp,
                                 child: Container(
                                     padding: const EdgeInsets.all(5.0),
                                     decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         color: KprimaryPink),
-                                    child: const Icon(
+                                    child: Icon(
                                       Icons.add_outlined,
-                                      size: 24,
+                                      size: 24.sp,
                                       color: Colors.white,
                                     )))
                           ],
                         ),
                       ),
                       const SizedBox(height: 10),
-                      const Text(
-                        'Do you want to add more photos for people to see ?',
+                      Text(
+                        'Do you want to add more photos for people to see?',
                         style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 14.sp,
                             fontFamily: 'Koh Santepheap',
                             fontWeight: FontWeight.w400),
                       ),
@@ -224,8 +226,8 @@ class _RegisterPage5State extends State<RegisterPage5> {
                             )),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(
-                          right: 25.0,
+                        padding: EdgeInsets.only(
+                          right: 25.w,
                         ),
                         child: Align(
                           alignment: Alignment.bottomRight,

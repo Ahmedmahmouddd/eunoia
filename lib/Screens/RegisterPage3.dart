@@ -1,6 +1,7 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, sized_box_for_whitespace
 import 'package:eunoia/Screens/RegisterPage4.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Constants/Constants.dart';
 import '../Widgets/RegisterStepperContainer.dart';
 
@@ -14,30 +15,33 @@ class RegisterPage3 extends StatefulWidget {
 class _RegisterPage3State extends State<RegisterPage3> {
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: KprimaryBeige,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 90),
-              child: Image.asset('assets/logo 1.png'),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(top: 67.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  RegisterStepperContainer(color: KprimaryGreen),
-                  SizedBox(width: 12),
-                  RegisterStepperContainer(color: Color.fromRGBO(0, 0, 0, 0.1)),
-                  SizedBox(width: 12),
-                  RegisterStepperContainer(color: Color.fromRGBO(0, 0, 0, 0.1)),
-                ],
-              ),
+            Container(
+                height: screenHeight * 0.25,
+                child: Image.asset('assets/logo 1.png')),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                RegisterStepperContainer(
+                    height: screenHeight * 0.005, color: KprimaryGreen),
+                SizedBox(width: 11.w),
+                RegisterStepperContainer(
+                    height: screenHeight * 0.005,
+                    color: const Color.fromRGBO(0, 0, 0, 0.1)),
+                SizedBox(width: 11.w),
+                RegisterStepperContainer(
+                    height: screenHeight * 0.005,
+                    color: const Color.fromRGBO(0, 0, 0, 0.1)),
+              ],
             ),
             Container(
-              height: 560,
+              height: screenHeight * 0.745,
               width: double.infinity,
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -45,38 +49,37 @@ class _RegisterPage3State extends State<RegisterPage3> {
               ),
               child: Column(
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 30.0),
+                  Padding(
+                    padding: EdgeInsets.only(top: 24.h),
                     child: Center(
                         child: Text(
                       'Business type',
                       style: TextStyle(
-                          color: Color.fromRGBO(0, 0, 0, 0.75),
+                          color: const Color.fromRGBO(0, 0, 0, 0.75),
                           fontFamily: 'Source Serif Pro',
                           fontWeight: FontWeight.w600,
-                          fontSize: 30),
+                          fontSize: 28.sp),
                     )),
                   ),
-                  const SizedBox(height: 50),
+                  SizedBox(height: 40.h),
                   Column(
                     children: [
-                      const Align(
+                      Align(
                         alignment: Alignment.topLeft,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 32.0),
+                          padding: EdgeInsets.only(left: 30.w),
                           child: Text(
                             'Business category',
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 14.5.sp,
                                 fontFamily: 'Koh Santepheap',
                                 fontWeight: FontWeight.w500),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 10),
+                      SizedBox(height: 8.h),
                       Container(
-                        width: 335,
-                        height: 60,
+                        width: screenWidth * 0.85,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
@@ -128,10 +131,10 @@ class _RegisterPage3State extends State<RegisterPage3> {
                                         value: item,
                                         child: Text(
                                           item,
-                                          style: const TextStyle(
-                                              fontSize: 14,
-                                              color:
-                                                  Color.fromRGBO(0, 0, 0, 0.6)),
+                                          style: TextStyle(
+                                              fontSize: 13.sp,
+                                              color: const Color.fromRGBO(
+                                                  0, 0, 0, 0.6)),
                                         ),
                                       ))
                                   .toList(),
@@ -142,26 +145,25 @@ class _RegisterPage3State extends State<RegisterPage3> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 25),
+                  SizedBox(height: 22.sp),
                   Column(
                     children: [
-                      const Align(
+                      Align(
                         alignment: Alignment.topLeft,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 32.0),
+                          padding: EdgeInsets.only(left: 30.w),
                           child: Text(
                             'Location',
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 14.5.sp,
                                 fontFamily: 'Koh Santepheap',
                                 fontWeight: FontWeight.w500),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 10),
+                      SizedBox(height: 8.h),
                       Container(
-                        width: 335,
-                        height: 60,
+                        width: screenWidth * 0.85,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
@@ -213,10 +215,10 @@ class _RegisterPage3State extends State<RegisterPage3> {
                                         value: item,
                                         child: Text(
                                           item,
-                                          style: const TextStyle(
-                                              fontSize: 14,
-                                              color:
-                                                  Color.fromRGBO(0, 0, 0, 0.6)),
+                                          style: TextStyle(
+                                              fontSize: 13.sp,
+                                              color: const Color.fromRGBO(
+                                                  0, 0, 0, 0.6)),
                                         ),
                                       ))
                                   .toList(),
@@ -227,10 +229,13 @@ class _RegisterPage3State extends State<RegisterPage3> {
                       ),
                     ],
                   ),
+                  const Spacer(
+                    flex: 2,
+                  ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                      top: 130,
-                      right: 25.0,
+                    padding: EdgeInsets.only(
+                      bottom: 50.h,
+                      right: 25.w,
                     ),
                     child: Align(
                       alignment: Alignment.bottomRight,

@@ -3,6 +3,7 @@ import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/LoginPage.dart';
 import 'package:eunoia/Screens/RegisterPage1.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../Widgets/CustomButton.dart';
 
@@ -15,45 +16,45 @@ class OnBoarding extends StatelessWidget {
       backgroundColor: KprimaryBeige,
       body: Column(
         children: [
-          const SizedBox(height: 80),
-          const Text(
+          SizedBox(height: 80.h),
+          Text(
             'Step into event perfection!',
             style: TextStyle(
-                fontSize: 22,
-                color: Color.fromRGBO(0, 0, 0, 0.6),
+                fontSize: 20.sp,
+                color: const Color.fromRGBO(0, 0, 0, 0.6),
                 fontFamily: 'Literata',
                 fontWeight: FontWeight.w700),
           ),
-          const SizedBox(height: 10),
-          const Text('From elegant weddings to corporate',
+          SizedBox(height: 8.h),
+          Text('From elegant weddings to corporate',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 16,
-                  color: Color.fromRGBO(119, 119, 119, 0.6),
+                  fontSize: 15.sp,
+                  color: const Color.fromRGBO(119, 119, 119, 0.6),
                   fontFamily: 'Literata',
                   fontWeight: FontWeight.w400)),
-          const Text('gatherings, Let’s turn your visions into',
+          Text('gatherings, Let’s turn your visions into',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 16,
-                  color: Color.fromRGBO(119, 119, 119, 0.6),
+                  fontSize: 15.sp,
+                  color: const Color.fromRGBO(119, 119, 119, 0.6),
                   fontFamily: 'Literata',
                   fontWeight: FontWeight.w400)),
-          const Text('remarkable moments!',
+          Text('remarkable moments!',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 16,
-                  color: Color.fromRGBO(119, 119, 119, 0.6),
+                  fontSize: 15.sp,
+                  color: const Color.fromRGBO(119, 119, 119, 0.6),
                   fontFamily: 'Literata',
                   fontWeight: FontWeight.w400)),
-          const SizedBox(height: 25),
+          SizedBox(height: 25.h),
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(20.w),
             child: Image.asset(
               'assets/Group 19.png',
             ),
           ),
-          const SizedBox(height: 14),
+          SizedBox(height: 13.h),
           CustomButton(
             title: 'Get Started',
             onTap: () {
@@ -62,17 +63,17 @@ class OnBoarding extends StatelessWidget {
               }));
             },
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Already have an account ? ',
                 style: TextStyle(
                     fontFamily: 'Source Serif Pro',
-                    fontSize: 16,
+                    fontSize: 15.sp,
                     fontWeight: FontWeight.w300,
-                    color: Color.fromRGBO(85, 102, 94, 1)),
+                    color: const Color.fromRGBO(85, 102, 94, 1)),
               ),
               GestureDetector(
                 onTap: () {
@@ -80,11 +81,11 @@ class OnBoarding extends StatelessWidget {
                     return const LoginPage();
                   }));
                 },
-                child: const Text(
+                child: Text(
                   'Login',
                   style: TextStyle(
                       fontFamily: 'Source Serif Pro',
-                      fontSize: 16,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.w700,
                       color: KprimaryGreen),
                 ),

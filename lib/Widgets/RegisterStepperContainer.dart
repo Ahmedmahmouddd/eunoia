@@ -2,12 +2,14 @@
 import 'package:flutter/material.dart';
 
 class RegisterStepperContainer extends StatelessWidget {
-  const RegisterStepperContainer({super.key, required this.color});
+  const RegisterStepperContainer(
+      {super.key, required this.color, required this.height});
+  final double height;
   final Color color;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 3,
+      height: height,
       width: 90,
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(90)),

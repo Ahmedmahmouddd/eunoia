@@ -1,6 +1,7 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, sized_box_for_whitespace
 import 'package:eunoia/Screens/RegisterPage5.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Constants/Constants.dart';
 import '../Widgets/RegisterStepperContainer.dart';
 
@@ -9,30 +10,33 @@ class RegisterPage4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: KprimaryBeige,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 90),
-              child: Image.asset('assets/logo 1.png'),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(top: 67.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  RegisterStepperContainer(color: KprimaryGreen),
-                  SizedBox(width: 12),
-                  RegisterStepperContainer(color: KprimaryGreen),
-                  SizedBox(width: 12),
-                  RegisterStepperContainer(color: Color.fromRGBO(0, 0, 0, 0.1)),
-                ],
-              ),
+            Container(
+                height: screenHeight * 0.25,
+                child: Image.asset('assets/logo 1.png')),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                RegisterStepperContainer(
+                    height: screenHeight * 0.005, color: KprimaryGreen),
+                SizedBox(width: 11.w),
+                RegisterStepperContainer(
+                    height: screenHeight * 0.005, color: KprimaryGreen),
+                SizedBox(width: 11.w),
+                RegisterStepperContainer(
+                    height: screenHeight * 0.005,
+                    color: const Color.fromRGBO(0, 0, 0, 0.1)),
+              ],
             ),
             Container(
-              height: 560,
+              height: screenHeight * 0.745,
               width: double.infinity,
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -40,27 +44,27 @@ class RegisterPage4 extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 25.0),
+                  Padding(
+                    padding: EdgeInsets.only(top: 24.h),
                     child: Center(
                       child: Text(
                         'Business info',
                         style: TextStyle(
-                          color: Color.fromRGBO(0, 0, 0, 0.75),
+                          color: const Color.fromRGBO(0, 0, 0, 0.75),
                           fontFamily: 'Source Serif Pro',
                           fontWeight: FontWeight.w600,
-                          fontSize: 30,
+                          fontSize: 28.sp,
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 35),
+                  SizedBox(height: 22.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        width: 120,
-                        height: 120,
+                        width: screenWidth * 0.31,
+                        height: screenWidth * 0.31,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
@@ -71,11 +75,11 @@ class RegisterPage4 extends StatelessWidget {
                         ),
                         child: Stack(
                           children: [
-                            const Positioned.fill(
+                            Positioned.fill(
                               child: Icon(
                                 Icons.image_outlined,
-                                color: Color.fromRGBO(0, 0, 0, 0.4),
-                                size: 30,
+                                color: const Color.fromRGBO(0, 0, 0, 0.4),
+                                size: 28.sp,
                               ),
                             ),
                             Positioned(
@@ -86,30 +90,30 @@ class RegisterPage4 extends StatelessWidget {
                                     decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         color: KprimaryPink),
-                                    child: const Icon(
+                                    child: Icon(
                                       Icons.add_outlined,
-                                      size: 24,
+                                      size: 22.sp,
                                       color: Colors.white,
                                     )))
                           ],
                         ),
                       ),
-                      const SizedBox(width: 10),
-                      const Column(
+                      SizedBox(width: 10.w),
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             'Upload your profile picture',
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 15.sp,
                                 fontFamily: 'Koh Santepheap',
                                 fontWeight: FontWeight.w500),
                           ),
                           Text(
                             'Preferably your personal photo ',
                             style: TextStyle(
-                                color: Color.fromRGBO(0, 0, 0, 0.6),
-                                fontSize: 12,
+                                color: const Color.fromRGBO(0, 0, 0, 0.6),
+                                fontSize: 12.sp,
                                 fontFamily: 'Koh Santepheap',
                                 fontWeight: FontWeight.w500),
                           ),
@@ -117,49 +121,45 @@ class RegisterPage4 extends StatelessWidget {
                       )
                     ],
                   ),
-                  const SizedBox(height: 20),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  SizedBox(height: 17.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.h),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Mobile number',
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 16,
+                            fontSize: 15.sp,
                             fontFamily: 'Koh Santepheap',
                             fontWeight: FontWeight.w500),
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    padding: EdgeInsets.symmetric(horizontal: 18.w),
                     child: Container(
                       decoration: const BoxDecoration(
-                          border:
-                              Border(bottom: BorderSide(color: Colors.black))),
-                      child: const Row(
+                          border: Border(
+                              bottom: BorderSide(
+                                  color: Colors.black,
+                                  strokeAlign: BorderSide.strokeAlignInside))),
+                      child: Row(
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(right: 8.0),
+                            padding: EdgeInsets.only(right: 8.w),
                             child: Text(
                               '+20',
                               style: TextStyle(
                                   fontFamily: 'Koh Santepheap',
-                                  fontSize: 18,
+                                  fontSize: 16.sp,
                                   fontWeight: FontWeight.w500),
                             ),
                           ),
-                          Expanded(
+                          const Expanded(
                             child: TextField(
                               decoration: InputDecoration(
                                 hintText: '1234567890',
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide.none),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide.none),
-                                focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide.none),
                               ),
                             ),
                           )
@@ -167,16 +167,16 @@ class RegisterPage4 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  SizedBox(height: 18.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        'Mobile number',
+                        'Business describtion',
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 16,
+                            fontSize: 14.5.sp,
                             fontFamily: 'Koh Santepheap',
                             fontWeight: FontWeight.w500),
                       ),
@@ -184,7 +184,7 @@ class RegisterPage4 extends StatelessWidget {
                   ),
                   const SizedBox(height: 12),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    padding: EdgeInsets.symmetric(horizontal: 18.w),
                     child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
@@ -215,17 +215,20 @@ class RegisterPage4 extends StatelessWidget {
                               focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide.none),
                             ),
-                            maxLines: null,
+                            maxLines: 2,
                             minLines: 2,
                           ),
                         ],
                       ),
                     ),
                   ),
+                  const Spacer(
+                    flex: 2,
+                  ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                      top: 25,
-                      right: 25.0,
+                    padding: EdgeInsets.only(
+                      bottom: 50.h,
+                      right: 25.w,
                     ),
                     child: Align(
                       alignment: Alignment.bottomRight,
