@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class NormalFormInput extends StatelessWidget {
-  const NormalFormInput({
+class ForgotPasswordFormInput extends StatelessWidget {
+  const ForgotPasswordFormInput({
     super.key,
     required this.label,
     required this.hint,
@@ -12,7 +12,7 @@ class NormalFormInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 27),
+      padding: EdgeInsets.symmetric(horizontal: 27.w),
       child: Container(
         decoration: const BoxDecoration(
           border: Border(

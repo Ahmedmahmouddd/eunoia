@@ -59,7 +59,7 @@ class VerificationCode extends StatelessWidget {
                   color: const Color.fromRGBO(0, 0, 0, 0.75)),
             ),
             SizedBox(
-              height: 10.h,
+              height: 14.h,
             ),
             const Form(
                 child: Row(
@@ -86,7 +86,7 @@ class VerificationCode extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Didn’t receive a code ?',
+                Text('Didn’t receive a code ? ',
                     style: TextStyle(
                         fontWeight: FontWeight.w500,
                         color: const Color.fromRGBO(0, 0, 0, 0.6),
