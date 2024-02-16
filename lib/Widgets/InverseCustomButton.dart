@@ -2,8 +2,8 @@
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 
-class ReverseCustomButton extends StatelessWidget {
-  ReverseCustomButton({super.key, required this.title, this.onTap});
+class InverseCustomButton extends StatelessWidget {
+  InverseCustomButton({super.key, required this.title, this.onTap});
   final String title;
   VoidCallback? onTap;
   @override

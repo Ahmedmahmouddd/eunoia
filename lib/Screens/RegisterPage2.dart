@@ -2,7 +2,7 @@
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/RegisterPage3.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
-import 'package:eunoia/Widgets/ReverseCustomButton.dart';
+import 'package:eunoia/Widgets/InverseCustomButton.dart';
 import 'package:flutter/material.dart';
 import 'LoginPage.dart';
 
@@ -36,7 +36,7 @@ class RegisterPage2 extends StatelessWidget {
           )),
           const SizedBox(height: 22),
           Center(
-              child: ReverseCustomButton(
+              child: InverseCustomButton(
             title: 'User',
             onTap: () {},
           )),
