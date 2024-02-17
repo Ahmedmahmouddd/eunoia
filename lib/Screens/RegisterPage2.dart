@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 import 'package:eunoia/Constants/Constants.dart';
+import 'package:eunoia/Screens/Home.dart';
 import 'package:eunoia/Screens/RegisterPage3.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
 import 'package:eunoia/Widgets/InverseCustomButton.dart';
@@ -37,8 +38,12 @@ class RegisterPage2 extends StatelessWidget {
           const SizedBox(height: 22),
           Center(
               child: InverseCustomButton(
-            title: 'User',
-            onTap: () {},
+            title: 'Client',
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const Home();
+              }));
+            },
           )),
           const SizedBox(height: 150),
           Row(
