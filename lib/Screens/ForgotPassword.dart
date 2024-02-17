@@ -24,7 +24,7 @@ class ForgotPassword extends StatelessWidget {
             }),
         centerTitle: true,
         title: Text(
-          'Forogt password',
+          'Forgot password',
           style: TextStyle(
               fontFamily: 'Literata',
               fontWeight: FontWeight.w700,

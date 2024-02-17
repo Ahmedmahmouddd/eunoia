@@ -234,7 +234,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      bottom: 50.h,
+                      bottom: 25.h,
                       right: 25.w,
                     ),
                     child: Align(

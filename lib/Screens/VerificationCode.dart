@@ -95,7 +95,7 @@ class VerificationCode extends StatelessWidget {
                 GestureDetector(
                   onTap: () {},
                   child: Text(
-                    'Resent code',
+                    'Resend code',
                     style: TextStyle(
                         fontWeight: FontWeight.w800,
                         color: KprimaryGreen,

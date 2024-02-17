@@ -227,7 +227,7 @@ class RegisterPage4 extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      bottom: 50.h,
+                      bottom: 25.h,
                       right: 25.w,
                     ),
                     child: Align(
