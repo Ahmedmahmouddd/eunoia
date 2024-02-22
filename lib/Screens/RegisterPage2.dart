@@ -49,11 +49,11 @@ class RegisterPage2 extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('Already have an account? ',
+              Text('Already have an account? ',
                   style: TextStyle(
                       fontWeight: FontWeight.w500,
-                      color: Color.fromRGBO(0, 0, 0, 0.6),
-                      fontSize: 16,
+                      color: const Color.fromRGBO(0, 0, 0, 0.6),
+                      fontSize: smallText,
                       fontFamily: 'Source Serif Pro')),
               GestureDetector(
                 onTap: () {
@@ -61,12 +61,12 @@ class RegisterPage2 extends StatelessWidget {
                     return const LoginPage();
                   }));
                 },
-                child: const Text(
+                child: Text(
                   'Login',
                   style: TextStyle(
                       fontWeight: FontWeight.w800,
                       color: KprimaryGreen,
-                      fontSize: 16,
+                      fontSize: smallText,
                       fontFamily: 'Source Serif Pro'),
                 ),
               ),

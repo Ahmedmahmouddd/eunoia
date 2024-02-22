@@ -1,6 +1,8 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
+import '../Constants/Constants.dart';
+
 class CustomRegisterTextField extends StatelessWidget {
   const CustomRegisterTextField({
     super.key,
@@ -20,22 +22,22 @@ class CustomRegisterTextField extends StatelessWidget {
           )),
         ),
         child: TextField(
-          style: const TextStyle(
-            fontSize: 16,
+          style: TextStyle(
+            fontSize: smallText,
             fontFamily: 'Koh Santepheap',
           ),
           decoration: InputDecoration(
             label: Text(label,
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.black,
-                  fontSize: 16,
+                  fontSize: smallText,
                   fontFamily: 'Koh Santepheap',
                 )),
             border: InputBorder.none,
             hintText: hint,
-            hintStyle: const TextStyle(
+            hintStyle: TextStyle(
                 fontFamily: 'Koh Santepheap',
-                fontSize: 16,
+                fontSize: smallText,
                 fontWeight: FontWeight.w400),
           ),
         ),

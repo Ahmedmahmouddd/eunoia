@@ -21,7 +21,7 @@ class CustomButton extends StatelessWidget {
               title,
               style: TextStyle(
                   fontFamily: 'Koh Santepheap',
-                  fontSize: 15.sp,
+                  fontSize: smallText,
                   fontWeight: FontWeight.w400,
                   color: Colors.white),
             ),

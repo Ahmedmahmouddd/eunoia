@@ -29,21 +29,21 @@ class OnBoarding extends StatelessWidget {
           Text('From elegant weddings to corporate',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 15.sp,
+                  fontSize: smallText,
                   color: const Color.fromRGBO(119, 119, 119, 0.6),
                   fontFamily: 'Literata',
                   fontWeight: FontWeight.w400)),
           Text('gatherings, Let’s turn your visions into',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 15.sp,
+                  fontSize: smallText,
                   color: const Color.fromRGBO(119, 119, 119, 0.6),
                   fontFamily: 'Literata',
                   fontWeight: FontWeight.w400)),
           Text('remarkable moments!',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 15.sp,
+                  fontSize: smallText,
                   color: const Color.fromRGBO(119, 119, 119, 0.6),
                   fontFamily: 'Literata',
                   fontWeight: FontWeight.w400)),
@@ -71,7 +71,7 @@ class OnBoarding extends StatelessWidget {
                 'Already have an account ? ',
                 style: TextStyle(
                     fontFamily: 'Source Serif Pro',
-                    fontSize: 15.sp,
+                    fontSize: smallText,
                     fontWeight: FontWeight.w300,
                     color: const Color.fromRGBO(85, 102, 94, 1)),
               ),
@@ -85,7 +85,7 @@ class OnBoarding extends StatelessWidget {
                   'Login',
                   style: TextStyle(
                       fontFamily: 'Source Serif Pro',
-                      fontSize: 15.sp,
+                      fontSize: smallText,
                       fontWeight: FontWeight.w700,
                       color: KprimaryGreen),
                 ),

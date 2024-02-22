@@ -87,7 +87,7 @@ class LoginPage extends StatelessWidget {
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               color: const Color.fromRGBO(0, 0, 0, 0.6),
-                              fontSize: 14.5.h,
+                              fontSize: smallText,
                               fontFamily: 'Source Serif Pro')),
                       GestureDetector(
                         onTap: () {
@@ -101,7 +101,7 @@ class LoginPage extends StatelessWidget {
                           style: TextStyle(
                               fontWeight: FontWeight.w800,
                               color: KprimaryGreen,
-                              fontSize: 14.5.h,
+                              fontSize: smallText,
                               fontFamily: 'Source Serif Pro'),
                         ),
                       ),

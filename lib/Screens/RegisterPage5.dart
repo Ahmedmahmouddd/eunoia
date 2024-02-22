@@ -72,7 +72,7 @@ class _RegisterPage5State extends State<RegisterPage5> {
                             child: Text(
                               'Words that describe your business',
                               style: TextStyle(
-                                  fontSize: 14.5.sp,
+                                  fontSize: smallText,
                                   fontFamily: 'Koh Santepheap',
                                   fontWeight: FontWeight.w500),
                             ),
@@ -133,7 +133,7 @@ class _RegisterPage5State extends State<RegisterPage5> {
                                           child: Text(
                                             item,
                                             style: TextStyle(
-                                                fontSize: 14.sp,
+                                                fontSize: smallText,
                                                 color: const Color.fromRGBO(
                                                     0, 0, 0, 0.6)),
                                           ),
@@ -153,7 +153,7 @@ class _RegisterPage5State extends State<RegisterPage5> {
                             child: Text(
                               'Upload your cover photo',
                               style: TextStyle(
-                                  fontSize: 14.5.sp,
+                                  fontSize: smallText,
                                   fontFamily: 'Koh Santepheap',
                                   fontWeight: FontWeight.w500),
                             ),
@@ -162,7 +162,7 @@ class _RegisterPage5State extends State<RegisterPage5> {
                         SizedBox(height: 8.h),
                         Container(
                           width: screenWidth * 0.85,
-                          height: screenWidth * 0.5,
+                          height: screenWidth * 0.45,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius:
@@ -198,14 +198,18 @@ class _RegisterPage5State extends State<RegisterPage5> {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        Text(
-                          'Do you want to add more photos for people to see?',
-                          style: TextStyle(
-                              fontSize: 14.sp,
-                              fontFamily: 'Koh Santepheap',
-                              fontWeight: FontWeight.w400),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 12.0, right: 12),
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            'Add more photos for people to see ?',
+                            style: TextStyle(
+                                fontSize: smallText,
+                                fontFamily: 'Koh Santepheap',
+                                fontWeight: FontWeight.w400),
+                          ),
                         ),
-                        const SizedBox(height: 5),
+                        const SizedBox(height: 12),
                         GestureDetector(
                           onTap: () {},
                           child: Container(
@@ -216,12 +220,12 @@ class _RegisterPage5State extends State<RegisterPage5> {
                                       color: KprimaryGreen, width: 1),
                                   borderRadius: BorderRadius.circular(20),
                                   color: KprimaryBeige),
-                              child: const Center(
+                              child: Center(
                                 child: Text(
                                   ' + Add photos ',
                                   style: TextStyle(
                                       fontFamily: 'Koh Santepheap',
-                                      fontSize: 16,
+                                      fontSize: smallText,
                                       fontWeight: FontWeight.w400,
                                       color: KprimaryGreen),
                                 ),

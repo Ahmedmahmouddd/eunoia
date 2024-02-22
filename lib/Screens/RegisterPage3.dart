@@ -71,7 +71,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
                           child: Text(
                             'Business category',
                             style: TextStyle(
-                                fontSize: 14.5.sp,
+                                fontSize: smallText,
                                 fontFamily: 'Koh Santepheap',
                                 fontWeight: FontWeight.w500),
                           ),
@@ -155,7 +155,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
                           child: Text(
                             'Location',
                             style: TextStyle(
-                                fontSize: 14.5.sp,
+                                fontSize: smallText,
                                 fontFamily: 'Koh Santepheap',
                                 fontWeight: FontWeight.w500),
                           ),

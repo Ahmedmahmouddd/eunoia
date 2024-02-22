@@ -105,7 +105,7 @@ class RegisterPage4 extends StatelessWidget {
                           Text(
                             'Upload your profile picture',
                             style: TextStyle(
-                                fontSize: 15.sp,
+                                fontSize: smallText,
                                 fontFamily: 'Koh Santepheap',
                                 fontWeight: FontWeight.w500),
                           ),
@@ -130,7 +130,7 @@ class RegisterPage4 extends StatelessWidget {
                         'Mobile number',
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 15.sp,
+                            fontSize: smallText,
                             fontFamily: 'Koh Santepheap',
                             fontWeight: FontWeight.w500),
                       ),
@@ -176,7 +176,7 @@ class RegisterPage4 extends StatelessWidget {
                         'Business describtion',
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 14.5.sp,
+                            fontSize: smallText,
                             fontFamily: 'Koh Santepheap',
                             fontWeight: FontWeight.w500),
                       ),

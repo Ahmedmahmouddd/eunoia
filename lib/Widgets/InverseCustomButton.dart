@@ -23,7 +23,7 @@ class InverseCustomButton extends StatelessWidget {
               title,
               style: TextStyle(
                   fontFamily: 'Koh Santepheap',
-                  fontSize: 15.sp,
+                  fontSize: smallText,
                   fontWeight: FontWeight.w600,
                   color: KprimaryGreen),
             ),
