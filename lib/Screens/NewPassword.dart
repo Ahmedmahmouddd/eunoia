@@ -39,10 +39,8 @@ class NewPassword extends StatelessWidget {
                     color: const Color.fromRGBO(0, 0, 0, 0.75),
                     fontWeight: FontWeight.w400)),
           ),
-          const ForgotPasswordFormInput(
-              label: 'New Password', hint: '********'),
-          const ForgotPasswordFormInput(
-              label: 'Confirm Password', hint: '********'),
+          const NormalFormInput(label: 'New Password', hint: '********'),
+          const NormalFormInput(label: 'Confirm Password', hint: '********'),
           SizedBox(
             height: 24.h,
           ),

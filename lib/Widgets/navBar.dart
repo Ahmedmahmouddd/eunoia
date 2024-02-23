@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +25,7 @@ class CustomNavBar extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10),
       color: Colors.transparent,
       child: Container(
-        padding: EdgeInsets.only(bottom: 15),
+        padding: const EdgeInsets.only(bottom: 15),
         width: double.infinity,
         height: 70,
         decoration: BoxDecoration(

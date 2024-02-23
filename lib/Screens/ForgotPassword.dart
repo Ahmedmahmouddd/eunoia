@@ -39,8 +39,7 @@ class ForgotPassword extends StatelessWidget {
                 ),
               ),
             ),
-            const ForgotPasswordFormInput(
-                label: 'Email', hint: 'example@example.com'),
+            const NormalFormInput(label: 'Email', hint: 'example@example.com'),
             Padding(
               padding: EdgeInsets.only(top: 80.h, bottom: 20.h),
               child: GestureDetector(

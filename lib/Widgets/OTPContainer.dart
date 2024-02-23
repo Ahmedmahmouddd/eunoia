@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:eunoia/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,8 +16,7 @@ class OTPContainer extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 5.w),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(
-              width: 2, color: const Color.fromRGBO(245, 185, 167, 1)),
+          border: Border.all(width: 2, color: KprimaryPink),
           borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
         height: 68,

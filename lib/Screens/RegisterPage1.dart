@@ -1,11 +1,11 @@
 // ignore_for_file: file_names, sized_box_for_whitespace
 import 'package:eunoia/Screens/LoginPage.dart';
 import 'package:eunoia/Screens/RegisterPage2.dart';
+import 'package:eunoia/Widgets/NormalFormInput.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Constants/Constants.dart';
 import '../Widgets/CustomButton.dart';
-import '../Widgets/CustomRegisterTextField.dart';
 
 class RegisterPage1 extends StatelessWidget {
   const RegisterPage1({super.key});
@@ -42,22 +42,22 @@ class RegisterPage1 extends StatelessWidget {
                     )),
                   ),
                   SizedBox(height: 15.h),
-                  const CustomRegisterTextField(
+                  const NormalFormInput(
                     label: 'Name',
                     hint: 'Full name',
                   ),
                   SizedBox(height: 4.h),
-                  const CustomRegisterTextField(
+                  const NormalFormInput(
                     label: 'Email',
                     hint: 'example@example.com',
                   ),
                   SizedBox(height: 4.h),
-                  const CustomRegisterTextField(
+                  const NormalFormInput(
                     label: 'Password',
                     hint: '********',
                   ),
                   SizedBox(height: 4.h),
-                  const CustomRegisterTextField(
+                  const NormalFormInput(
                     label: 'Confirm password',
                     hint: '********',
                   ),
