@@ -1,8 +1,8 @@
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/Home.dart';
+import 'package:eunoia/Screens/photographers.dart';
 import 'package:eunoia/Widgets/CustomAppBar.dart';
 import 'package:eunoia/Widgets/categoryCard.dart';
-import 'package:eunoia/Widgets/navBar.dart';
 import 'package:flutter/material.dart';
 
 class Categories extends StatefulWidget {
@@ -28,9 +28,16 @@ class _CategoriesState extends State<Categories> {
       body: ListView.builder(
         itemCount: categoryCards.length,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-            child: categoryCards[index],
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const Photographers();
+              }));
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+              child: categoryCards[index],
+            ),
           );
         },
       ),
@@ -42,6 +49,10 @@ List<CategoryCard> categoryCards = [
   CategoryCard(
     categoryImage: 'assets/venues.png',
     categoryName: 'VENUES',
+  ),
+  CategoryCard(
+    categoryImage: 'assets/photographers.png',
+    categoryName: 'PHOTOGRAPHERS',
   ),
   CategoryCard(
     categoryImage: 'assets/eventplanners.png',

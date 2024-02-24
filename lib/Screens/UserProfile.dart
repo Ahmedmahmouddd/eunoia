@@ -20,13 +20,15 @@ class UserProfile extends StatelessWidget {
             const CircularPictureWithHalfMoonShadow(),
             SizedBox(height: 10.h),
             Text(
-              'PROFILE PHOTO',
+              'Islam Tarek',
               style: TextStyle(
-                  fontSize: 18.sp,
-                  fontFamily: 'Literata',
-                  color: const Color.fromRGBO(0, 0, 0, 0.75)),
+                fontSize: 20.sp,
+                fontFamily: 'Literata',
+                color: const Color.fromRGBO(0, 0, 0, 0.6),
+                fontWeight: FontWeight.w500,
+              ),
             ),
-            SizedBox(height: 35.h),
+            SizedBox(height: 30.h),
             const AccountSettingsContainer(
                 icon: Icons.edit, data: 'Edit Profile'),
             const AccountSettingsContainer(
@@ -62,22 +64,28 @@ class AccountSettingsContainer extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 27.0.w),
           child: Row(
             children: [
-              Icon(icon),
+              Icon(
+                icon,
+                color: const Color.fromRGBO(0, 0, 0, 0.6),
+              ),
               SizedBox(
                 width: 15.w,
               ),
               Text(
                 data,
-                style: TextStyle(fontSize: 16.sp),
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  color: const Color.fromRGBO(0, 0, 0, 0.6),
+                ),
               ),
             ],
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 17),
           child: Container(
             height: 1.0,
-            color: Color.fromARGB(255, 208, 208, 208),
+            color: const Color.fromARGB(255, 208, 208, 208),
           ),
         ),
       ],

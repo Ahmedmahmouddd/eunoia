@@ -35,7 +35,7 @@ class Eunoia extends StatelessWidget {
             ),
           ),
           duration: 2000,
-          nextScreen: const OnBoarding(),
+          nextScreen: const Temp(),
           splashIconSize: double.infinity,
           pageTransitionType: PageTransitionType.fade,
           splashTransition: SplashTransition.fadeTransition,

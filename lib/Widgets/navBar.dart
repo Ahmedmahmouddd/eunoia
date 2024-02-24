@@ -21,21 +21,16 @@ class CustomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 107,
+      height: 95,
       padding: const EdgeInsets.only(top: 10),
       color: Colors.transparent,
       child: Container(
         padding: const EdgeInsets.only(bottom: 15),
         width: double.infinity,
         height: 70,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 20,
-              color: Colors.grey.shade300,
-            )
-          ],
+          border: Border(top: BorderSide(width: .1)),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

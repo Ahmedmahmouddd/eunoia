@@ -1,7 +1,6 @@
 // ignore_for_file: file_names, sized_box_for_whitespace
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/EditProfile.dart';
-import 'package:eunoia/Screens/UserProfile.dart';
 import 'package:eunoia/Screens/ForgotPassword.dart';
 import 'package:eunoia/Screens/RegisterPage1.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
