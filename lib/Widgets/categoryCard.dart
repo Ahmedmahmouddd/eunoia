@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, must_be_immutable
+// ignore_for_file: file_names, must_be_immutable, sized_box_for_whitespace
 import 'package:flutter/material.dart';
 
 class CategoryCard extends StatelessWidget {
@@ -6,6 +6,7 @@ class CategoryCard extends StatelessWidget {
       {super.key, required this.categoryImage, required this.categoryName});
   String categoryName;
   String categoryImage;
+  @override
   Widget build(BuildContext context) {
     return Container(
         width: 350,
@@ -25,7 +26,7 @@ class CategoryCard extends StatelessWidget {
             Center(
               child: Text(
                 categoryName,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color.fromRGBO(0, 0, 0, 0.7),
                   fontSize: 16,
                   fontFamily: 'Literata',

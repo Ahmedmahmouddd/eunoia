@@ -1,9 +1,11 @@
+// ignore_for_file: camel_case_types
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/Home.dart';
-import 'package:eunoia/Screens/categories.dart';
-import 'package:eunoia/Screens/chatBot.dart';
-import 'package:eunoia/Screens/profile.dart';
-import 'package:eunoia/Screens/search.dart';
+import 'package:eunoia/Screens/Categories.dart';
+import 'package:eunoia/Screens/ChatBot.dart';
+import 'package:eunoia/Screens/EditProfile.dart';
+import 'package:eunoia/Screens/Search.dart';
+import 'package:eunoia/Screens/UserProfile.dart';
 import 'package:eunoia/Widgets/navBar.dart';
 import 'package:flutter/material.dart';
 
@@ -16,11 +18,11 @@ class temp extends StatefulWidget {
 
 class _CategoriesState extends State<temp> {
   final List screens = [
-    Categories(),
-    Search(),
-    Home(),
-    ChatBot(),
-    Profile(),
+    const Categories(),
+    const Search(),
+    const Home(),
+    const ChatBot(),
+    const UserProfile(),
   ];
 
   int _currentTab = 2;

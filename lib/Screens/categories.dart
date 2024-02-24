@@ -14,8 +14,8 @@ class Categories extends StatefulWidget {
 
 class _CategoriesState extends State<Categories> {
   final List screens = [
-    Home(),
-    Categories(),
+    const Home(),
+    const Categories(),
   ];
 
   @override

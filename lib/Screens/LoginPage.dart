@@ -1,5 +1,7 @@
 // ignore_for_file: file_names, sized_box_for_whitespace
 import 'package:eunoia/Constants/Constants.dart';
+import 'package:eunoia/Screens/EditProfile.dart';
+import 'package:eunoia/Screens/UserProfile.dart';
 import 'package:eunoia/Screens/ForgotPassword.dart';
 import 'package:eunoia/Screens/RegisterPage1.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
@@ -74,8 +76,18 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 11.h),
-                  CustomButton(
-                    title: 'Log in',
+                  /////////////////////////////////////////////
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const EditProfile();
+                      }));
+                      /////////////////////////////////////////
+                    },
+                    child: CustomButton(
+                      title: 'Log in',
+                    ),
                   ),
                   SizedBox(
                     height: 78.h,
