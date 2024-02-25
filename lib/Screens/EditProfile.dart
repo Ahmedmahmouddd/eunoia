@@ -14,7 +14,10 @@ class EditProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: KprimaryBeige,
-        appBar: const CustomAppBar(title: 'Edit Profile'),
+        appBar: const CustomAppBar(
+          title: 'Edit Profile',
+          backButton: true,
+        ),
         body: Column(
           children: [
             SizedBox(height: 10.h),

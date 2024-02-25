@@ -23,6 +23,7 @@ class _CategoriesState extends State<Categories> {
     return Scaffold(
       appBar: const CustomAppBar(
         title: 'Categories',
+        backButton: false,
       ),
       backgroundColor: KprimaryBeige,
       body: ListView.builder(

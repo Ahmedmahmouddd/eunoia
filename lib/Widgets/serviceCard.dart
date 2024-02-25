@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,11 +10,12 @@ class ServiceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Column(
       children: [
         Container(
-          height: 180.h,
-          width: 285.h,
+          // height: 190.h,
+          width: screenWidth * 0.9,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(5),
@@ -28,6 +31,7 @@ class ServiceCard extends StatelessWidget {
             children: [
               Column(
                 children: [
+                  // ignore: avoid_unnecessary_containers
                   Container(
                     child: Image.asset('assets/cover.png'),
                   ),
@@ -40,32 +44,33 @@ class ServiceCard extends StatelessWidget {
                     height: 80.h,
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      SizedBox(
-                        width: 16.h,
+                      //SizedBox(width: 16.h),
+                      Padding(
+                        padding: EdgeInsets.only(left: 16.0.w),
+                        child: Image.asset('assets/profilepic.png'),
                       ),
-                      Image.asset('assets/profilepic.png'),
-                      SizedBox(
-                        width: 180.h,
-                      ),
-                      const Row(
-                        children: [
-                          Icon(
-                            Icons.star_rate,
-                            color: Colors.yellow,
-                            size: 20,
-                          ),
-                          Text(
-                            '4.5',
-                            style: TextStyle(
-                              color: Color.fromRGBO(0, 0, 0, .6),
-                              fontFamily: 'Literata',
-                              fontSize: 12,
+                      Padding(
+                        padding: EdgeInsets.only(right: 16.0.w, top: 38.h),
+                        child: const Row(
+                          children: [
+                            Icon(
+                              Icons.star_rate,
+                              color: Colors.yellow,
+                              size: 20,
                             ),
-                          ),
-                        ],
+                            Text(
+                              '4.5',
+                              style: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, .6),
+                                fontFamily: 'Literata',
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -103,7 +108,7 @@ class ServiceCard extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: 12.h),
+                    padding: EdgeInsets.only(right: 11.h, bottom: 9.h),
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [

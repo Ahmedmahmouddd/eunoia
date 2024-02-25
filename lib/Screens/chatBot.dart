@@ -10,7 +10,10 @@ class ChatBot extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: KprimaryBeige,
-      appBar: CustomAppBar(title: 'ChatBot'),
+      appBar: CustomAppBar(
+        title: 'ChatBot',
+        backButton: false,
+      ),
     );
   }
 }

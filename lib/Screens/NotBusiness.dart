@@ -12,7 +12,10 @@ class NotBusiness extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: KprimaryBeige,
-      appBar: const CustomAppBar(title: 'Business Account'),
+      appBar: const CustomAppBar(
+        title: 'Business Account',
+        backButton: true,
+      ),
       body: Column(
         children: [
           Padding(

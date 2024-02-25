@@ -14,7 +14,10 @@ class NewPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: KprimaryBeige,
-      appBar: const CustomAppBar(title: 'New Password'),
+      appBar: const CustomAppBar(
+        title: 'New Password',
+        backButton: true,
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -30,7 +30,7 @@ class Eunoia extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/Logo.png'),
-                fit: BoxFit.scaleDown, // Adjust the fit as needed
+                fit: BoxFit.scaleDown,
               ),
             ),
           ),

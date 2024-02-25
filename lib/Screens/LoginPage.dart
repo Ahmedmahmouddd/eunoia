@@ -1,8 +1,8 @@
 // ignore_for_file: file_names, sized_box_for_whitespace
 import 'package:eunoia/Constants/Constants.dart';
-import 'package:eunoia/Screens/EditProfile.dart';
 import 'package:eunoia/Screens/ForgotPassword.dart';
 import 'package:eunoia/Screens/RegisterPage1.dart';
+import 'package:eunoia/Screens/temp.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -66,7 +66,7 @@ class LoginPage extends StatelessWidget {
                       }));
                     },
                     child: Center(
-                      child: Text('Forgot your password?',
+                      child: Text('Forgot your password ?',
                           style: TextStyle(
                               color: const Color.fromRGBO(0, 0, 0, 0.6),
                               fontFamily: 'Source Serif Pro',
@@ -75,14 +75,12 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 11.h),
-                  /////////////////////////////////////////////
                   GestureDetector(
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return const EditProfile();
+                        return const Temp();
                       }));
-                      /////////////////////////////////////////
                     },
                     child: CustomButton(
                       title: 'Log in',

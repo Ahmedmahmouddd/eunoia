@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:eunoia/Constants/Constants.dart';
-import 'package:eunoia/Widgets/CustomAppBar.dart';
+import 'package:eunoia/Screens/EditProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Widgets/CircularPictureWithHalfMoonShadow.dart';
@@ -13,24 +13,33 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: KprimaryBeige,
-        appBar: const CustomAppBar(title: ''),
-        body: Column(
+        //appBar: const CustomAppBar(title: ''),
+        body: ListView(
           children: [
-            SizedBox(height: 10.h),
+            SizedBox(height: 26.h),
             const CircularPictureWithHalfMoonShadow(),
             SizedBox(height: 10.h),
-            Text(
-              'Islam Tarek',
-              style: TextStyle(
-                fontSize: 20.sp,
-                fontFamily: 'Literata',
-                color: const Color.fromRGBO(0, 0, 0, 0.6),
-                fontWeight: FontWeight.w500,
+            Center(
+              child: Text(
+                'Islam Tarek',
+                style: TextStyle(
+                  fontSize: 20.sp,
+                  fontFamily: 'Literata',
+                  color: const Color.fromRGBO(0, 0, 0, 0.6),
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
             SizedBox(height: 30.h),
-            const AccountSettingsContainer(
-                icon: Icons.edit, data: 'Edit Profile'),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const EditProfile();
+                }));
+              },
+              child: const AccountSettingsContainer(
+                  icon: Icons.edit, data: 'Edit Profile'),
+            ),
             const AccountSettingsContainer(
                 icon: Icons.lock_outline_rounded, data: 'Change Password'),
             const AccountSettingsContainer(
