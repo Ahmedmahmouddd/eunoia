@@ -1,5 +1,5 @@
 // ignore_for_file: camel_case_types
-import 'package:eunoia/Constants/Constants.dart';
+/*import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/Home.dart';
 import 'package:eunoia/Screens/Categories.dart';
 import 'package:eunoia/Screens/ChatBot.dart';
@@ -67,3 +67,4 @@ class _TempState extends State<Temp> {
     );
   }
 }
+*/

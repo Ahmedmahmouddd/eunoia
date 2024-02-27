@@ -4,14 +4,14 @@ import 'package:eunoia/Widgets/serviceCard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Photographers extends StatefulWidget {
-  const Photographers({Key? key}) : super(key: key);
+class Food extends StatefulWidget {
+  const Food({Key? key}) : super(key: key);
 
   @override
-  State<Photographers> createState() => _PhotographersState();
+  State<Food> createState() => _FoodState();
 }
 
-class _PhotographersState extends State<Photographers> {
+class _FoodState extends State<Food> {
   List<String> items = <String>[
     'Price: Low to High',
     'Price: High to Low',
@@ -29,7 +29,7 @@ class _PhotographersState extends State<Photographers> {
       ),
       backgroundColor: KprimaryBeige,
       appBar: const CustomAppBar(
-        title: 'Photographers',
+        title: 'Food',
         backButton: true,
       ),
       body: SafeArea(
