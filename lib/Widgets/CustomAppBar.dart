@@ -3,27 +3,30 @@ import 'package:flutter/material.dart';
 import '../Constants/Constants.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({Key? key, required this.title})
+  const CustomAppBar({Key? key, required this.title, required this.backButton})
       : preferredSize = const Size.fromHeight(kToolbarHeight),
         super(key: key);
 
   @override
   final Size preferredSize;
-
+  final bool backButton;
   final String title;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: IconButton(
-        icon: const Icon(
-          Icons.arrow_back_ios_new_rounded,
-          color: Color.fromRGBO(0, 0, 0, 0.65),
-        ),
-        onPressed: () {
-          Navigator.pop(context);
-        },
-      ),
+      automaticallyImplyLeading: false,
+      leading: backButton == true
+          ? IconButton(
+              icon: const Icon(
+                Icons.arrow_back_ios_new_rounded,
+                color: Color.fromRGBO(0, 0, 0, 0.65),
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            )
+          : null,
       centerTitle: true,
       title: Text(
         title,

@@ -14,7 +14,10 @@ class VerificationCode extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: KprimaryBeige,
-      appBar: const CustomAppBar(title: 'Verification Code'),
+      appBar: const CustomAppBar(
+        title: 'Verification Code',
+        backButton: true,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

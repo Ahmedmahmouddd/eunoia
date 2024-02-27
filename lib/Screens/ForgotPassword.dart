@@ -16,6 +16,7 @@ class ForgotPassword extends StatelessWidget {
       backgroundColor: KprimaryBeige,
       appBar: const CustomAppBar(
         title: 'Forgot Password',
+        backButton: true,
       ),
       body: SingleChildScrollView(
         child: Column(
