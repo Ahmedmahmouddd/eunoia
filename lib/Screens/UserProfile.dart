@@ -4,6 +4,7 @@ import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/EditProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import '../Widgets/CircularPictureWithHalfMoonShadow.dart';
 
 class UserProfile extends StatelessWidget {
@@ -33,9 +34,11 @@ class UserProfile extends StatelessWidget {
             SizedBox(height: 30.h),
             GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const EditProfile();
-                }));
+                PersistentNavBarNavigator.pushNewScreen(
+                  context,
+                  screen: const EditProfile(),
+                  withNavBar: false,
+                );
               },
               child: const AccountSettingsContainer(
                   icon: Icons.edit, data: 'Edit Profile'),
