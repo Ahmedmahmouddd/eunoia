@@ -3,6 +3,7 @@ import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/ForgotPassword.dart';
 import 'package:eunoia/Screens/RegisterPage1.dart';
 import 'package:eunoia/Screens/temp.dart';
+import 'package:eunoia/Screens/temptemptemp.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -79,7 +80,7 @@ class LoginPage extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return const Temp();
+                        return const TempTempTemp();
                       }));
                     },
                     child: CustomButton(

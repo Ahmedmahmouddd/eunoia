@@ -3,6 +3,8 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:eunoia/Screens/Home.dart';
 import 'package:eunoia/Screens/OnBoarding.dart';
 import 'package:eunoia/Screens/Categories.dart';
+import 'package:eunoia/Screens/temp.dart';
+import 'package:eunoia/Screens/temptemp.dart';
 import 'package:eunoia/Screens/temptemptemp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
