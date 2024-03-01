@@ -2,7 +2,6 @@
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/ForgotPassword.dart';
 import 'package:eunoia/Screens/RegisterPage1.dart';
-import 'package:eunoia/Screens/temp.dart';
 import 'package:eunoia/Screens/temptemptemp.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
 import 'package:flutter/material.dart';

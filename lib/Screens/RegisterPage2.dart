@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/RegisterPage3.dart';
-import 'package:eunoia/Screens/temp.dart';
 import 'package:eunoia/Screens/temptemptemp.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
 import 'package:eunoia/Widgets/InverseCustomButton.dart';

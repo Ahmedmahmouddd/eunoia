@@ -90,17 +90,17 @@ class _PhotographersState extends State<Photographers> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, bottom: 12),
-              child: Container(
-                height: 1,
-                color: const Color.fromARGB(255, 208, 208, 208),
+            Expanded(
+              child: ListView.builder(
+                itemCount: 5, // Number of items to scroll
+                itemBuilder: (context, index) {
+                  return const ServiceCard(); // Your ServiceCard widget
+                },
               ),
             ),
-            const Center(
-              child: ServiceCard(),
-            ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
