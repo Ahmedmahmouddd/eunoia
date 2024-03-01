@@ -1,4 +1,4 @@
-import 'package:eunoia/Constants/Constants.dart';
+import '../Constants/Constants.dart';
 import 'package:eunoia/Widgets/CustomAppBar.dart';
 import 'package:eunoia/Widgets/serviceCard.dart';
 import 'package:flutter/material.dart';

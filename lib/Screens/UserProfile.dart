@@ -2,6 +2,8 @@
 
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/EditProfile.dart';
+import 'package:eunoia/Screens/Requests.dart';
+import 'package:eunoia/Widgets/UserProfileOption.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -22,7 +24,7 @@ class UserProfile extends StatelessWidget {
             SizedBox(height: 10.h),
             Center(
               child: Text(
-                'Islam Tarek',
+                'Lewis Hamilton',
                 style: TextStyle(
                   fontSize: 20.sp,
                   fontFamily: 'Literata',
@@ -32,75 +34,49 @@ class UserProfile extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30.h),
-            GestureDetector(
-              onTap: () {
+            UserProfileOption(
+              icon: Icons.edit,
+              data: 'Edit Profile',
+              ontap: () {
                 PersistentNavBarNavigator.pushNewScreen(
                   context,
                   screen: const EditProfile(),
                   withNavBar: false,
                 );
               },
-              child: const AccountSettingsContainer(
-                  icon: Icons.edit, data: 'Edit Profile'),
             ),
-            const AccountSettingsContainer(
-                icon: Icons.lock_outline_rounded, data: 'Change Password'),
-            const AccountSettingsContainer(
-                icon: Icons.favorite_border, data: 'Favorites'),
-            const AccountSettingsContainer(
-                icon: Icons.supervisor_account_outlined,
-                data: 'Business account'),
-            const AccountSettingsContainer(
-                icon: Icons.ads_click, data: 'Requests'),
-            const AccountSettingsContainer(
-                icon: Icons.logout_outlined, data: 'Logout'),
+            UserProfileOption(
+              icon: Icons.lock_outline_rounded,
+              data: 'Change Password',
+              ontap: () {},
+            ),
+            UserProfileOption(
+              icon: Icons.favorite_border,
+              data: 'Favorites',
+              ontap: () {},
+            ),
+            UserProfileOption(
+              icon: Icons.supervisor_account_outlined,
+              data: 'Business account',
+              ontap: () {},
+            ),
+            UserProfileOption(
+              icon: Icons.ads_click,
+              data: 'Requests',
+              ontap: () {
+                PersistentNavBarNavigator.pushNewScreen(
+                  context,
+                  screen: const Requests(),
+                  withNavBar: false,
+                );
+              },
+            ),
+            UserProfileOption(
+              icon: Icons.logout_outlined,
+              data: 'Logout',
+              ontap: () {},
+            ),
           ],
         ));
-  }
-}
-
-class AccountSettingsContainer extends StatelessWidget {
-  const AccountSettingsContainer({
-    super.key,
-    required this.icon,
-    required this.data,
-  });
-  final String data;
-  final IconData icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 27.0.w),
-          child: Row(
-            children: [
-              Icon(
-                icon,
-                color: const Color.fromRGBO(0, 0, 0, 0.6),
-              ),
-              SizedBox(
-                width: 15.w,
-              ),
-              Text(
-                data,
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  color: const Color.fromRGBO(0, 0, 0, 0.6),
-                ),
-              ),
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 17),
-          child: Container(
-            height: 1.0,
-            color: const Color.fromARGB(255, 208, 208, 208),
-          ),
-        ),
-      ],
-    );
   }
 }

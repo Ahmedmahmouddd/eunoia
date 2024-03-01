@@ -1,9 +1,9 @@
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/Home.dart';
 import 'package:eunoia/Screens/UserProfile.dart';
-import 'package:eunoia/Screens/categories.dart';
-import 'package:eunoia/Screens/chatBot.dart';
-import 'package:eunoia/Screens/search.dart';
+import 'package:eunoia/Screens/Categories.dart';
+import 'package:eunoia/Screens/ChatBot.dart';
+import 'package:eunoia/Screens/Search.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
