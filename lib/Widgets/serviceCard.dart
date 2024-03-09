@@ -45,7 +45,11 @@ class ServiceCard extends StatelessWidget {
                     children: [
                       // ignore: avoid_unnecessary_containers
                       Container(
-                        child: Image.asset('assets/cover.png'),
+                        child: Image.asset(
+                          'assets/cover.png',
+                          fit: BoxFit.fill,
+                          width: screenWidth * 0.99,
+                        ),
                       ),
                     ],
                   ),
