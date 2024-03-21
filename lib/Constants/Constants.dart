@@ -12,3 +12,7 @@ final smallText = 14.5.sp;
 double getScreenWidth(BuildContext context) {
   return MediaQuery.of(context).size.width;
 }
+
+double getScreenHeight(BuildContext context) {
+  return MediaQuery.of(context).size.height;
+}

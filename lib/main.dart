@@ -1,5 +1,6 @@
 // ignore_for_file: unused_import
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:eunoia/Constants/cash_storage.dart';
 import 'package:eunoia/Screens/Home.dart';
 import 'package:eunoia/Screens/OnBoarding.dart';
 import 'package:eunoia/Screens/Categories.dart';
@@ -11,7 +12,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';
 import 'Constants/Constants.dart';
 
-void main() {
+void main() async {
+  await CacheStorage.init();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const Eunoia());
 }
 
