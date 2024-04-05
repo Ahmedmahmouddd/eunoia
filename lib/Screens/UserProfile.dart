@@ -2,6 +2,8 @@
 
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/EditProfile.dart';
+import 'package:eunoia/Screens/ForgotPassword.dart';
+import 'package:eunoia/Screens/OnBoarding.dart';
 import 'package:eunoia/Screens/Requests.dart';
 import 'package:eunoia/Widgets/UserProfileOption.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +50,13 @@ class UserProfile extends StatelessWidget {
             UserProfileOption(
               icon: Icons.lock_outline_rounded,
               data: 'Change Password',
-              ontap: () {},
+              ontap: () {
+                PersistentNavBarNavigator.pushNewScreen(
+                  context,
+                  screen: const ForgotPassword(),
+                  withNavBar: false,
+                );
+              },
             ),
             UserProfileOption(
               icon: Icons.favorite_border,
@@ -74,7 +82,13 @@ class UserProfile extends StatelessWidget {
             UserProfileOption(
               icon: Icons.logout_outlined,
               data: 'Logout',
-              ontap: () {},
+              ontap: () {
+                PersistentNavBarNavigator.pushNewScreen(
+                  context,
+                  screen: const OnBoarding(),
+                  withNavBar: false,
+                );
+              },
             ),
           ],
         ));

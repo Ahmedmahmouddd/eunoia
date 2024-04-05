@@ -1,9 +1,9 @@
+// ignore: file_names
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Widgets/nearbyCard.dart';
 import 'package:eunoia/Widgets/offerCard.dart';
 import 'package:eunoia/Widgets/popularCard.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key});
