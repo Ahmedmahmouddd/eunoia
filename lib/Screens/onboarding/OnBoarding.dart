@@ -1,11 +1,11 @@
 // ignore_for_file: file_names
 import 'package:eunoia/Constants/Constants.dart';
-import 'package:eunoia/Screens/LoginPage.dart';
-import 'package:eunoia/Screens/RegisterPage1.dart';
+import 'package:eunoia/Screens/login/LoginPage.dart';
+import 'package:eunoia/Screens/register/RegisterPage1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../Widgets/CustomButton.dart';
+import '../../Widgets/CustomButton.dart';
 
 class OnBoarding extends StatelessWidget {
   const OnBoarding({super.key});
@@ -51,7 +51,7 @@ class OnBoarding extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(20.w),
             child: Image.asset(
-              'assets/Group 19.png',
+              'assets/images/Group 19.png',
             ),
           ),
           SizedBox(height: 13.h),
@@ -78,7 +78,7 @@ class OnBoarding extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return const LoginPage();
+                    return LoginPage();
                   }));
                 },
                 child: Text(

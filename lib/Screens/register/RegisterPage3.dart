@@ -1,9 +1,9 @@
 // ignore_for_file: file_names, sized_box_for_whitespace
-import 'package:eunoia/Screens/RegisterPage4.dart';
+import 'package:eunoia/Screens/register/RegisterPage4.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../Constants/Constants.dart';
-import '../Widgets/RegisterStepperContainer.dart';
+import '../../Constants/Constants.dart';
+import '../../Widgets/RegisterStepperContainer.dart';
 
 class RegisterPage3 extends StatefulWidget {
   const RegisterPage3({super.key});
@@ -24,7 +24,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
           children: [
             Container(
                 height: screenHeight * 0.25,
-                child: Image.asset('assets/logo 1.png')),
+                child: Image.asset('assets/images/logo1.png')),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

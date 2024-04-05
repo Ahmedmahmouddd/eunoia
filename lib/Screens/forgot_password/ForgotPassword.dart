@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 import 'package:eunoia/Constants/Constants.dart';
-import 'package:eunoia/Screens/VerificationCode.dart';
+import 'package:eunoia/Screens/forgot_password/VerificationCode.dart';
 import 'package:eunoia/Widgets/CustomAppBar.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
 import 'package:eunoia/Widgets/NormalFormInput.dart';
@@ -24,7 +24,7 @@ class ForgotPassword extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(
                   top: 18.h, right: 62.w, left: 62.w, bottom: 40.sp),
-              child: Image.asset('assets/ResetPassword.png'),
+              child: Image.asset('assets/images/ResetPassword.png'),
             ),
             Center(
               child: Padding(

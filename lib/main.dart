@@ -2,17 +2,30 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:eunoia/Constants/cash_storage.dart';
 import 'package:eunoia/Screens/Home.dart';
-import 'package:eunoia/Screens/OnBoarding.dart';
+import 'package:eunoia/Screens/login/LoginPage.dart';
+import 'package:eunoia/Screens/onboarding/OnBoarding.dart';
 import 'package:eunoia/Screens/Categories.dart';
 import 'package:eunoia/Screens/temp.dart';
 import 'package:eunoia/Screens/temptemp.dart';
 import 'package:eunoia/Screens/temptemptemp.dart';
+import 'package:eunoia/config/config.dart';
+import 'package:eunoia/services/shared_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';
 import 'Constants/Constants.dart';
 
+Widget defaultHome = const LoginPage();
+
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Get result of the login function.
+  bool _result = await SharedServices.isLoggedIn();
+  if (_result) {
+    defaultHome = const Home();
+  }
+
   await CacheStorage.init();
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const Eunoia());
@@ -34,13 +47,13 @@ class Eunoia extends StatelessWidget {
           splash: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/Logo.png'),
+                image: AssetImage('assets/images/Logo.png'),
                 fit: BoxFit.scaleDown,
               ),
             ),
           ),
           duration: 2000,
-          nextScreen: const TempTempTemp(),
+          nextScreen: const OnBoarding(),
           splashIconSize: double.infinity,
           pageTransitionType: PageTransitionType.fade,
           splashTransition: SplashTransition.fadeTransition,

@@ -1,11 +1,11 @@
 // ignore_for_file: file_names
 import 'package:eunoia/Constants/Constants.dart';
-import 'package:eunoia/Screens/RegisterPage3.dart';
+import 'package:eunoia/Screens/register/RegisterPage3.dart';
 import 'package:eunoia/Screens/temptemptemp.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
 import 'package:eunoia/Widgets/InverseCustomButton.dart';
 import 'package:flutter/material.dart';
-import 'LoginPage.dart';
+import '../login/LoginPage.dart';
 
 class RegisterPage2 extends StatelessWidget {
   const RegisterPage2({super.key});
@@ -18,7 +18,7 @@ class RegisterPage2 extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(height: 120),
-          Center(child: Image.asset('assets/logo 1.png')),
+          Center(child: Image.asset('assets/images/logo1.png')),
           const SizedBox(height: 45),
           const Text('Create account as a',
               style: TextStyle(
@@ -58,7 +58,7 @@ class RegisterPage2 extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return const LoginPage();
+                    return LoginPage();
                   }));
                 },
                 child: Text(
