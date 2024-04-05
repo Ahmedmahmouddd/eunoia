@@ -5,6 +5,8 @@ class CustomLoginTextField extends StatelessWidget {
   CustomLoginTextField({super.key, required this.label, required this.icon});
   String? label;
   Icon? icon;
+  Key? textkey;
+  String? Value;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,7 +33,18 @@ class CustomLoginTextField extends StatelessWidget {
                 ),
                 const SizedBox(width: 5),
                 Expanded(
-                  child: TextField(
+                  child: TextFormField(
+                    onSaved: (value) {
+                      Value = value;
+                    },
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Field cannot be empty';
+                      } else {
+                        return null;
+                      }
+                    },
+                    key: textkey,
                     style: const TextStyle(
                       fontSize: 18,
                       fontFamily: 'Koh Santepheap',

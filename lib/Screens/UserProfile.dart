@@ -2,10 +2,11 @@
 
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/EditProfile.dart';
-import 'package:eunoia/Screens/ForgotPassword.dart';
-import 'package:eunoia/Screens/OnBoarding.dart';
+import 'package:eunoia/Screens/forgot_password/ForgotPassword.dart';
+import 'package:eunoia/Screens/onboarding/OnBoarding.dart';
 import 'package:eunoia/Screens/Requests.dart';
 import 'package:eunoia/Widgets/UserProfileOption.dart';
+import 'package:eunoia/services/shared_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -83,11 +84,7 @@ class UserProfile extends StatelessWidget {
               icon: Icons.logout_outlined,
               data: 'Logout',
               ontap: () {
-                PersistentNavBarNavigator.pushNewScreen(
-                  context,
-                  screen: const OnBoarding(),
-                  withNavBar: false,
-                );
+                SharedServices.logout(context);
               },
             ),
           ],

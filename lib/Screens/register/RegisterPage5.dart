@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../Constants/Constants.dart';
-import '../Widgets/RegisterStepperContainer.dart';
+import '../../Constants/Constants.dart';
+import '../../Widgets/RegisterStepperContainer.dart';
 
 class RegisterPage5 extends StatefulWidget {
   const RegisterPage5({super.key});
@@ -24,7 +24,7 @@ class _RegisterPage5State extends State<RegisterPage5> {
           children: [
             Container(
                 height: screenHeight * 0.25,
-                child: Image.asset('assets/logo 1.png')),
+                child: Image.asset('assets/images/logo1.png')),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

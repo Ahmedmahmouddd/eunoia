@@ -1,9 +1,9 @@
 // ignore_for_file: file_names, sized_box_for_whitespace
-import 'package:eunoia/Screens/RegisterPage5.dart';
+import 'package:eunoia/Screens/register/RegisterPage5.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../Constants/Constants.dart';
-import '../Widgets/RegisterStepperContainer.dart';
+import '../../Constants/Constants.dart';
+import '../../Widgets/RegisterStepperContainer.dart';
 
 class RegisterPage4 extends StatelessWidget {
   const RegisterPage4({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class RegisterPage4 extends StatelessWidget {
           children: [
             Container(
                 height: screenHeight * 0.25,
-                child: Image.asset('assets/logo 1.png')),
+                child: Image.asset('assets/images/logo1.png')),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
