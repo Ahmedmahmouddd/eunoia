@@ -20,8 +20,8 @@ class CustomButton extends StatelessWidget {
             child: Text(
               title,
               style: TextStyle(
-                  fontFamily: 'Koh Santepheap',
-                  fontSize: smallText,
+                  fontFamily: 'Literata',
+                  fontSize: 18,
                   fontWeight: FontWeight.w400,
                   color: Colors.white),
             ),

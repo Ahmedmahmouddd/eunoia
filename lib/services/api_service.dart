@@ -39,16 +39,25 @@ class ApiServices {
 
   static Future<RegisterResponseModel> register(
       RegisterRequestModel model) async {
-    Map<String, String> requestHeaders = {'Content-type': 'Application/json'};
+    try {
+      Map<String, String> requestHeaders = {'Content-type': 'application/json'};
+      var url = Uri.parse('${config.apiURL}${config.registerAPI}');
+      var response = await http.post(
+        url,
+        headers: requestHeaders,
+        body: jsonEncode(model.toJson()),
+      );
 
-    var url = Uri.http(config.apiURL, config.registerAPI);
-    var response = await client.post(
-      url,
-      headers: requestHeaders,
-      body: jsonEncode(model.toJson()),
-    );
-
-    return registerResponseModel(response.body);
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        return RegisterResponseModel.fromJson(jsonDecode(response.body));
+      } else {
+        print('Registration failed');
+        throw Exception('Registration failed: ${jsonDecode(response.body)['message']}');
+      }
+    } catch (e) {
+      print('Exception occurred during registration: $e');
+      throw e;
+    }
   }
 
   static Future<String> getUserProfile() async {

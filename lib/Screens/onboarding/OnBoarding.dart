@@ -2,6 +2,7 @@
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/login/LoginPage.dart';
 import 'package:eunoia/Screens/register/RegisterPage1.dart';
+import 'package:eunoia/Screens/register/page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -59,7 +60,7 @@ class OnBoarding extends StatelessWidget {
             title: 'Get Started',
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const RegisterPage1();
+                return const mltiStepForm();
               }));
             },
           ),
@@ -78,7 +79,7 @@ class OnBoarding extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return LoginPage();
+                    return const LoginPage();
                   }));
                 },
                 child: Text(

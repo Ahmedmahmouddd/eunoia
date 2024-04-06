@@ -1,8 +1,9 @@
-// ignore_for_file: file_names, sized_box_for_whitespace, non_constant_identifier_names
+// ignore_for_file: file_names, sized_box_for_whitespace, non_constant_identifier_names, use_build_context_synchronously
 import 'package:eunoia/Screens/Home.dart';
 import 'package:eunoia/Screens/login/LoginPage.dart';
-import 'package:eunoia/Widgets/imput_form_field.dart';
+import 'package:eunoia/Widgets/input_form_field2.dart';
 import 'package:eunoia/config/config.dart';
+import 'package:eunoia/extensions/sized_box_helper.dart';
 import 'package:eunoia/models/registerModels/register_request_model.dart';
 import 'package:eunoia/services/api_service.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,8 @@ class _RegisterPage1State extends State<RegisterPage1> {
   String? username;
   String? password;
   String? email;
+  String? passwordConfirm;
+  String? rule;
 
   @override
   Widget build(BuildContext context) {
@@ -66,12 +69,12 @@ class _RegisterPage1State extends State<RegisterPage1> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          InputFormField(
+                          InputFormField2(
                             icon: const Icon(Icons.person_outline, size: 28),
                             title: 'Name',
                             hidePassword: false,
                             onSaved: (value) {
-                              password = value;
+                              username = value;
                             },
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -83,13 +86,13 @@ class _RegisterPage1State extends State<RegisterPage1> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 4.h),
-                      InputFormField(
+                      SizedBox(height: 8.h),
+                      InputFormField2(
                         icon: const Icon(Icons.email, size: 28),
                         title: 'Email',
                         hidePassword: false,
                         onSaved: (value) {
-                          password = value;
+                          email = value;
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -99,8 +102,8 @@ class _RegisterPage1State extends State<RegisterPage1> {
                           }
                         },
                       ),
-                      SizedBox(height: 4.h),
-                      InputFormField(
+                      SizedBox(height: 8.h),
+                      InputFormField2(
                         icon: const Icon(Icons.password, size: 28),
                         title: 'Password',
                         hidePassword: hidePassword,
@@ -121,8 +124,8 @@ class _RegisterPage1State extends State<RegisterPage1> {
                           });
                         },
                       ),
-                      SizedBox(height: 4.h),
-                      InputFormField(
+                      SizedBox(height: 8.h),
+                      InputFormField2(
                         icon: const Icon(Icons.password, size: 28),
                         title: 'Confirm Password',
                         hidePassword: hidePassword,
@@ -143,58 +146,88 @@ class _RegisterPage1State extends State<RegisterPage1> {
                           });
                         },
                       ),
-                      SizedBox(height: 18.h),
-                      SizedBox(height: 22.h),
-                      ElevatedButton(
-                          onPressed: () {
+                      18.szH,
+                      22.szH,
+                      SizedBox(
+                        height: 44.h,
+                        width: 325.w,
+                        child: ElevatedButton(
+                          onPressed: () async {
                             if (validateAndSave()) {
                               setState(() {
-                                isApiCallProcess = false;
+                                isApiCallProcess =
+                                    true; // Set to true to indicate API call in progress
                               });
                               RegisterRequestModel model = RegisterRequestModel(
-                                  email: email!,
-                                  password: password!,
-                                  name: username);
-                              ApiServices.register(model).then((Response) => {
-                                    if (Response.token != null)
-                                      {
-                                        FormHelper.showSimpleAlertDialog(
-                                          context,
-                                          config.appName,
-                                          "success !!",
-                                          "OK",
-                                          () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return const Home();
-                                            }));
-                                          },
-                                        )
-                                      }
-                                    else
-                                      {
-                                        FormHelper.showSimpleAlertDialog(
-                                          context,
-                                          config.appName,
-                                          'there was an error',
-                                          "OK",
-                                          () {
-                                            Navigator.of(context).pop();
-                                          },
-                                        )
-                                      }
-                                  });
-                            }
-                            if (globalformKey.currentState!.validate()) {
+                                email: email!,
+                                password: password!,
+                                name: username!,
+                                passwordConfirm: password!,
+                                role: 'admin',
+                              );
+
+                              try {
+                                await ApiServices.register(model);
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text("Registration successful"),
+                                    duration: Duration(seconds: 2),
+                                  ),
+                                );
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Home()));
+                              } on Exception catch (error) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(error.toString()),
+                                    duration: const Duration(seconds: 2),
+                                  ),
+                                );
+                              } finally {
+                                setState(() {
+                                  isApiCallProcess =
+                                      false; // Reset to false after API call completes
+                                });
+                              }
+                            } else {
+                              // Form validation failed
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                  content: Text('validate complete'),
+                                  content: Text(
+                                      'Please fix the errors in the form.'),
+                                  duration: Duration(seconds: 2),
                                 ),
                               );
                             }
                           },
-                          child: const Text('Register')),
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                KprimaryGreen), // Background color
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.circular(16), // Border radius
+                              ),
+                            ),
+                            elevation: MaterialStateProperty.all<double>(
+                                0), // Elevation
+                          ),
+                          child: const Center(
+                            child: Text(
+                              'Create Account',
+                              style: TextStyle(
+                                fontFamily: 'Literata',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                       SizedBox(height: 7.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,

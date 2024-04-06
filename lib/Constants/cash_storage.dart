@@ -24,4 +24,8 @@ class CacheStorage {
   static dynamic read(String key) {
     return _sharedPrefrences.get(key);
   }
+
+  static Future<void> clearAll() async {
+    await _sharedPrefrences.clear();
+  }
 }

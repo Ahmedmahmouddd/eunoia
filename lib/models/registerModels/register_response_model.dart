@@ -1,28 +1,30 @@
+// To parse this JSON data, do
+//
+//     final registerResponseModel = registerResponseModelFromJson(jsonString);
+
+import 'package:meta/meta.dart';
 import 'dart:convert';
 
-RegisterResponseModel registerResponseModel(String str) =>
-    RegisterResponseModel.fromJson(json.decode(str));
+RegisterResponseModel registerResponseModelFromJson(String str) => RegisterResponseModel.fromJson(json.decode(str));
+
+String registerResponseModelToJson(RegisterResponseModel data) => json.encode(data.toJson());
 
 class RegisterResponseModel {
-  String? status;
-  String? token;
+    String status;
+    String token;
 
-  RegisterResponseModel({this.status, this.token});
+    RegisterResponseModel({
+        required this.status,
+        required this.token,
+    });
 
-  RegisterResponseModel.fromJson(Map<String, dynamic> json) {
-    status = json['status'];
-    token = json['token'];
-  }
+    factory RegisterResponseModel.fromJson(Map<String, dynamic> json) => RegisterResponseModel(
+        status: json["status"],
+        token: json["token"],
+    );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['status'] = this.status;
-    data['token'] = this.token;
-    return data;
-  }
+    Map<String, dynamic> toJson() => {
+        "status": status,
+        "token": token,
+    };
 }
-
-
-
-
-///////WE ARE STILL TO HANDLE FAILURE CASES, WE ONLY HANDLE SUCCESS CASES HERE

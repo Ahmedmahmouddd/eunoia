@@ -7,14 +7,14 @@ import 'package:eunoia/Screens/Search.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-class TempTempTemp extends StatefulWidget {
-  const TempTempTemp({super.key});
+class MainNav extends StatefulWidget {
+  const MainNav({super.key});
 
   @override
-  State<TempTempTemp> createState() => _TempTempTempState();
+  State<MainNav> createState() => _MainNavState();
 }
 
-class _TempTempTempState extends State<TempTempTemp> {
+class _MainNavState extends State<MainNav> {
   final _controller = PersistentTabController(initialIndex: 2);
 
   List<Widget> screens() {

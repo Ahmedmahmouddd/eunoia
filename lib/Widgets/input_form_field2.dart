@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class InputFormField extends StatelessWidget {
+class InputFormField2 extends StatelessWidget {
   final bool hidePassword;
   final Function(String?) onSaved;
   final String? Function(String?)? validator;
   final VoidCallback? onPressed;
   final String title;
   final Icon icon;
-  const InputFormField({
+  const InputFormField2({
     Key? key,
     required this.hidePassword,
     required this.onSaved,
     required this.validator,
     this.onPressed,
-    required this.title,required this.icon,
+    required this.title,
+    required this.icon,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25),
+      padding: EdgeInsets.symmetric(horizontal: 25.w),
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 12),
+        padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 1),
         decoration: const BoxDecoration(
           border: Border(
             bottom: BorderSide(
@@ -34,33 +36,27 @@ class InputFormField extends StatelessWidget {
           children: [
             Row(
               children: [
-                 Padding(
-                  padding:const EdgeInsets.only(top: 12.0),
-                  child: icon,
-                ),
-                const SizedBox(width: 5),
-                Container(
-                  width: 1,
-                  height: 55,
-                  color: const Color.fromRGBO(119, 119, 119, 0.6),
-                ),
-                const SizedBox(width: 5),
                 Expanded(
                   child: TextFormField(
                     obscureText: hidePassword,
                     onSaved: onSaved,
                     validator: validator,
                     style: const TextStyle(
+                      color: Color.fromRGBO(0, 0, 0, 0.6),
                       fontSize: 18,
-                      fontFamily: 'Koh Santepheap',
+                      fontFamily: 'Literata',
                     ),
                     decoration: InputDecoration(
-                      label: Text(title),
+                      hintText: '',
+                      label: Padding(
+                        padding: EdgeInsets.only(bottom: 15.h),
+                        child: Text(title),
+                      ),
                       labelStyle: const TextStyle(
-                        color: Color.fromRGBO(0, 0, 0, 0.6),
-                        fontWeight: FontWeight.w100,
-                        fontSize: 18,
-                        fontFamily: 'Koh Santepheap',
+                        color: Color.fromRGBO(0, 0, 0, 0.75),
+                        fontWeight: FontWeight.normal,
+                        fontSize: 16,
+                        fontFamily: 'Literata',
                       ),
                       border: InputBorder.none,
                     ),
@@ -68,8 +64,12 @@ class InputFormField extends StatelessWidget {
                 ),
                 if (onPressed != null) ...[
                   IconButton(
-                    icon: Icon(
-                      hidePassword ? Icons.visibility_off : Icons.visibility,
+                    icon: Padding(
+                      padding: EdgeInsets.only(top: 20.h, left: 50),
+                      child: Icon(
+                        hidePassword ? Icons.visibility_off : Icons.visibility,
+                        color: const Color.fromRGBO(0, 0, 0, 0.6),
+                      ),
                     ),
                     onPressed: onPressed,
                   ),
