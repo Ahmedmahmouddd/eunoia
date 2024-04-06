@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, sized_box_for_whitespace, non_constant_identifier_names
 import 'package:eunoia/Screens/Home.dart';
 import 'package:eunoia/Screens/login/LoginPage.dart';
-import 'package:eunoia/Widgets/imput_form_field.dart';
+import 'package:eunoia/Widgets/input_form_field2.dart';
 import 'package:eunoia/config/config.dart';
 import 'package:eunoia/models/registerModels/register_request_model.dart';
 import 'package:eunoia/services/api_service.dart';
@@ -66,12 +66,12 @@ class _RegisterPage1State extends State<RegisterPage1> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          InputFormField(
+                          InputFormField2(
                             icon: const Icon(Icons.person_outline, size: 28),
                             title: 'Name',
                             hidePassword: false,
                             onSaved: (value) {
-                              password = value;
+                              username = value;
                             },
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -83,13 +83,13 @@ class _RegisterPage1State extends State<RegisterPage1> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 4.h),
-                      InputFormField(
+                      SizedBox(height: 8.h),
+                      InputFormField2(
                         icon: const Icon(Icons.email, size: 28),
                         title: 'Email',
                         hidePassword: false,
                         onSaved: (value) {
-                          password = value;
+                          email = value;
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -99,8 +99,8 @@ class _RegisterPage1State extends State<RegisterPage1> {
                           }
                         },
                       ),
-                      SizedBox(height: 4.h),
-                      InputFormField(
+                      SizedBox(height: 8.h),
+                      InputFormField2(
                         icon: const Icon(Icons.password, size: 28),
                         title: 'Password',
                         hidePassword: hidePassword,
@@ -121,8 +121,8 @@ class _RegisterPage1State extends State<RegisterPage1> {
                           });
                         },
                       ),
-                      SizedBox(height: 4.h),
-                      InputFormField(
+                      SizedBox(height: 8.h),
+                      InputFormField2(
                         icon: const Icon(Icons.password, size: 28),
                         title: 'Confirm Password',
                         hidePassword: hidePassword,
@@ -146,55 +146,72 @@ class _RegisterPage1State extends State<RegisterPage1> {
                       SizedBox(height: 18.h),
                       SizedBox(height: 22.h),
                       ElevatedButton(
-                          onPressed: () {
-                            if (validateAndSave()) {
-                              setState(() {
-                                isApiCallProcess = false;
-                              });
-                              RegisterRequestModel model = RegisterRequestModel(
-                                  email: email!,
-                                  password: password!,
-                                  name: username);
-                              ApiServices.register(model).then((Response) => {
-                                    if (Response.token != null)
-                                      {
-                                        FormHelper.showSimpleAlertDialog(
-                                          context,
-                                          config.appName,
-                                          "success !!",
-                                          "OK",
-                                          () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return const Home();
-                                            }));
-                                          },
-                                        )
-                                      }
-                                    else
-                                      {
-                                        FormHelper.showSimpleAlertDialog(
-                                          context,
-                                          config.appName,
-                                          'there was an error',
-                                          "OK",
-                                          () {
-                                            Navigator.of(context).pop();
-                                          },
-                                        )
-                                      }
-                                  });
-                            }
-                            if (globalformKey.currentState!.validate()) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('validate complete'),
-                                ),
-                              );
-                            }
-                          },
-                          child: const Text('Register')),
+                        onPressed: () {
+                          if (validateAndSave()) {
+                            setState(() {
+                              isApiCallProcess = false;
+                            });
+                            RegisterRequestModel model = RegisterRequestModel(
+                                email: email!,
+                                password: password!,
+                                name: username);
+                            ApiServices.register(model).then((Response) => {
+                                  if (Response.token != null)
+                                    {
+                                      FormHelper.showSimpleAlertDialog(
+                                        context,
+                                        config.appName,
+                                        "success !!",
+                                        "OK",
+                                        () {
+                                          Navigator.push(context,
+                                              MaterialPageRoute(
+                                                  builder: (context) {
+                                            return const Home();
+                                          }));
+                                        },
+                                      )
+                                    }
+                                  else
+                                    {
+                                      FormHelper.showSimpleAlertDialog(
+                                        context,
+                                        config.appName,
+                                        'there was an error',
+                                        "OK",
+                                        () {
+                                          Navigator.of(context).pop();
+                                        },
+                                      )
+                                    }
+                                });
+                          }
+                          if (globalformKey.currentState!.validate()) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('validate complete'),
+                              ),
+                            );
+                          }
+                        },
+                        child: Container(
+                          height: 44.h,
+                          width: 325.w,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              color: KprimaryGreen),
+                          child: Center(
+                            child: Text(
+                              'Create Account',
+                              style: TextStyle(
+                                  fontFamily: 'Literata',
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ),
                       SizedBox(height: 7.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,

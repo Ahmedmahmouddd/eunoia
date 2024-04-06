@@ -23,7 +23,7 @@ class PopularCard extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 image: DecorationImage(
                   image: AssetImage(
-                    'assets/popular.png',
+                    'assets/images/popular.png',
                   ),
                 ),
               ),

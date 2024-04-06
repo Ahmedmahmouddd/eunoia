@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/register/RegisterPage3.dart';
-import 'package:eunoia/Screens/temptemptemp.dart';
+import 'package:eunoia/Screens/navigationBar.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
 import 'package:eunoia/Widgets/InverseCustomButton.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +41,7 @@ class RegisterPage2 extends StatelessWidget {
             title: 'Client',
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const TempTempTemp();
+                return const MainNav();
               }));
             },
           )),

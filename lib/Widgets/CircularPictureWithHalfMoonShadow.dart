@@ -27,7 +27,7 @@ class CircularPictureWithHalfMoonShadow extends StatelessWidget {
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                    image: AssetImage('assets/LH44.jpg'),
+                    image: AssetImage('assets/images/LH44.jpg'),
                     fit: BoxFit.cover,
                   ),
                 ),

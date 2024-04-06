@@ -22,7 +22,7 @@ class NearbyCard extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 image: DecorationImage(
                   image: AssetImage(
-                    'assets/nearby.png',
+                    'assets/images/nearby.png',
                   ),
                 ),
               ),

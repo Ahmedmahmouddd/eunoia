@@ -21,13 +21,18 @@ class EditableField extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: 16.sp, fontFamily: 'Literata'),
+            style: TextStyle(
+              fontSize: 16.sp,
+              fontFamily: 'Literata',
+              color: Color.fromRGBO(0, 0, 0, 0.6),
+            ),
           ),
           Container(
             decoration: const BoxDecoration(
               border: Border(
                   bottom: BorderSide(
-                color: Color.fromRGBO(119, 119, 119, 0.6),
+                width: 0.5,
+                color: Color.fromRGBO(0, 0, 0, 0.6),
               )),
             ),
             child: TextField(
