@@ -69,7 +69,8 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(height: 16.h),
                       InputFormField(
                         icon: const Icon(Icons.email_outlined,
-                            size: 28, color: Color.fromRGBO(0, 0, 0, 0.6)),
+                            size: 28,
+                            color: const Color.fromRGBO(0, 0, 0, 0.6)),
                         title: 'Email',
                         hidePassword: false,
                         onSaved: (value) {
@@ -88,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                         icon: const Icon(
                           Icons.lock_outline,
                           size: 28,
-                          color: Color.fromRGBO(0, 0, 0, 0.6),
+                          color: const Color.fromRGBO(0, 0, 0, 0.6),
                         ),
                         title: 'Password',
                         hidePassword: hidePassword,
