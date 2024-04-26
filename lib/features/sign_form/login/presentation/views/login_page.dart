@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, unnecessary_const
 // ignore_for_file: file_names,  non_constant_identifier_names, must_be_immutable
 import 'package:eunoia/Screens/navigationBar.dart';
-import 'package:eunoia/features/sign_form/register/presentation/views/RegisterPage1.dart';
+import 'package:eunoia/features/sign_form/register/presentation/views/register_page1.dart';
 import 'package:eunoia/Widgets/input_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

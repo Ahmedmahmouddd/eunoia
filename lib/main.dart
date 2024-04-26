@@ -1,9 +1,9 @@
 // ignore_for_file: unused_import
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:eunoia/core/constants/cash_storage.dart';
-import 'package:eunoia/Screens/Home.dart';
-import 'package:eunoia/features/sign_form/login/presentation/views/LoginPage.dart';
-import 'package:eunoia/Screens/onboarding/OnBoarding.dart';
+import 'package:eunoia/features/home/presentation/views/home.dart';
+import 'package:eunoia/features/sign_form/login/presentation/views/login_page.dart';
+import 'package:eunoia/features/sign_form/on_boarding/views/onboarding.dart';
 import 'package:eunoia/Screens/Categories.dart';
 import 'package:eunoia/Screens/navigationBar.dart';
 import 'package:eunoia/core/config/config.dart';

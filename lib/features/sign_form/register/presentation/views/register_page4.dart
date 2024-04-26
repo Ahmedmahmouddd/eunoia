@@ -1,5 +1,5 @@
 // ignore_for_file: file_names, sized_box_for_whitespace
-import 'package:eunoia/features/sign_form/register/presentation/views/RegisterPage5.dart';
+import 'package:eunoia/features/sign_form/register/presentation/views/register_page5.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

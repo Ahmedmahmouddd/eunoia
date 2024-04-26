@@ -3,17 +3,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class NearbyCard extends StatelessWidget {
-  const NearbyCard({
+class PopularCard extends StatelessWidget {
+  const PopularCard({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 10.0, bottom: 30),
+      padding: const EdgeInsets.only(left: 10, right: 5),
       child: Container(
-        width: 209.w,
+        width: 135.w,
+        height: 125.h,
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
@@ -24,7 +25,7 @@ class NearbyCard extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 image: DecorationImage(
                   image: AssetImage(
-                    'assets/images/nearby.png',
+                    'assets/images/popular.png',
                   ),
                 ),
               ),
@@ -48,7 +49,7 @@ class NearbyCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Yomna Tarek',
+                    'Amr Abdallah',
                     style: TextStyle(
                       color: Color.fromRGBO(0, 0, 0, .6),
                       fontFamily: 'Literata',
@@ -57,7 +58,7 @@ class NearbyCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Event Planner',
+                    'Photographer',
                     style: TextStyle(
                       color: Color.fromRGBO(0, 0, 0, .6),
                       fontFamily: 'Literata',

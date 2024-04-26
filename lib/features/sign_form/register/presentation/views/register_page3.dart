@@ -3,7 +3,7 @@ import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:eunoia/features/sign_form/register/presentation/views/RegisterPage4.dart';
+import 'package:eunoia/features/sign_form/register/presentation/views/register_page4.dart';
 
 import '../../../../../Widgets/RegisterStepperContainer.dart';
 

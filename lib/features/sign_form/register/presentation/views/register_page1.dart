@@ -1,8 +1,8 @@
 // ignore_for_file: file_names, sized_box_for_whitespace, non_constant_identifier_names, use_build_context_synchronously
-import 'package:eunoia/Screens/Home.dart';
-import 'package:eunoia/features/sign_form/login/presentation/views/LoginPage.dart';
+import 'package:eunoia/features/home/presentation/views/home.dart';
 import 'package:eunoia/Widgets/input_form_field2.dart';
 import 'package:eunoia/core/extensions/sized_box_helper.dart';
+import 'package:eunoia/features/sign_form/login/presentation/views/login_page.dart';
 import 'package:eunoia/features/sign_form/register/data/models/register_request_model.dart';
 import 'package:eunoia/services/api_service.dart';
 import 'package:flutter/material.dart';
@@ -79,9 +79,8 @@ class _RegisterPage1State extends State<RegisterPage1> {
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 isfieldempty = true;
-                              } else {
-                                return null;
-                              }
+                              } 
+                              return null;
                             },
                           ),
                         ],
@@ -97,9 +96,8 @@ class _RegisterPage1State extends State<RegisterPage1> {
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             isfieldempty = true;
-                          } else {
-                            return null;
-                          }
+                          } 
+                          return null;
                         },
                       ),
                       SizedBox(height: 8.h),
@@ -113,9 +111,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             isfieldempty = true;
-                          } else {
-                            return null;
-                          }
+                          }return null;
                         },
                         onPressed: () {
                           setState(() {
@@ -135,9 +131,9 @@ class _RegisterPage1State extends State<RegisterPage1> {
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             isfieldempty = true;
-                          } else {
+                          } 
                             return null;
-                          }
+                          
                         },
                         onPressed: () {
                           setState(() {

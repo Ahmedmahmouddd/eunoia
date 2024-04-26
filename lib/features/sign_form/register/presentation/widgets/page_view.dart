@@ -1,10 +1,10 @@
 // ignore_for_file: camel_case_types, library_private_types_in_public_api
 
-import 'package:eunoia/features/sign_form/register/presentation/views/RegisterPage1.dart';
-import 'package:eunoia/features/sign_form/register/presentation/views/RegisterPage2.dart';
-import 'package:eunoia/features/sign_form/register/presentation/views/RegisterPage3.dart';
-import 'package:eunoia/features/sign_form/register/presentation/views/RegisterPage4.dart';
-import 'package:eunoia/features/sign_form/register/presentation/views/RegisterPage5.dart';
+import 'package:eunoia/features/sign_form/register/presentation/views/register_page1.dart';
+import 'package:eunoia/features/sign_form/register/presentation/views/register_page2.dart';
+import 'package:eunoia/features/sign_form/register/presentation/views/register_page3.dart';
+import 'package:eunoia/features/sign_form/register/presentation/views/register_page4.dart';
+import 'package:eunoia/features/sign_form/register/presentation/views/register_page5.dart';
 import 'package:flutter/material.dart';
 
 class mltiStepForm extends StatefulWidget {

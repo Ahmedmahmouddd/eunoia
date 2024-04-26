@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
-import 'package:eunoia/features/sign_form/login/presentation/views/LoginPage.dart';
-import 'package:eunoia/Screens/register/page_view.dart';
+import 'package:eunoia/features/sign_form/login/presentation/views/login_page.dart';
+import 'package:eunoia/features/sign_form/register/presentation/widgets/page_view.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

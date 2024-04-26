@@ -1,5 +1,4 @@
 import 'package:eunoia/core/Constants/Constants.dart';
-import 'package:eunoia/Screens/Home.dart';
 import 'package:eunoia/Screens/djs.dart';
 import 'package:eunoia/Screens/eventPlanners.dart';
 import 'package:eunoia/Screens/food.dart';
@@ -10,6 +9,7 @@ import 'package:eunoia/Screens/photographers.dart';
 import 'package:eunoia/Screens/venues.dart';
 import 'package:eunoia/Widgets/CustomAppBar.dart';
 import 'package:eunoia/Widgets/categoryCard.dart';
+import 'package:eunoia/features/home/presentation/views/home.dart';
 import 'package:flutter/material.dart';
 
 class Categories extends StatefulWidget {

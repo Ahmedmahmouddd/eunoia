@@ -1,13 +1,12 @@
 // ignore_for_file: file_names
+import 'package:eunoia/features/sign_form/login/presentation/views/login_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:eunoia/Screens/navigationBar.dart';
-import 'package:eunoia/features/sign_form/register/presentation/views/RegisterPage3.dart';
+import 'package:eunoia/features/sign_form/register/presentation/views/register_page3.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
 import 'package:eunoia/Widgets/InverseCustomButton.dart';
-
-import '../../../login/presentation/views/LoginPage.dart';
 
 class RegisterPage2 extends StatelessWidget {
   const RegisterPage2({super.key});

@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:eunoia/core/Constants/Constants.dart';
-import 'package:eunoia/Screens/Home.dart';
+import 'package:eunoia/features/home/presentation/views/home.dart';
 import 'package:eunoia/Screens/UserProfile.dart';
 import 'package:eunoia/Screens/Categories.dart';
 import 'package:eunoia/Screens/ChatBot.dart';

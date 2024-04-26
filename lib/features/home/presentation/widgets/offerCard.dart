@@ -11,7 +11,7 @@ class OfferCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 10.0),
+      padding: const EdgeInsets.only(left: 10, right: 5),
       child: Container(
         width: 240.w,
         height: 125.h,
@@ -24,7 +24,7 @@ class OfferCard extends StatelessWidget {
           ),
         ),
         child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 22),
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
