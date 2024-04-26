@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -26,7 +28,7 @@ class PackageWidget extends StatelessWidget {
                 fontFamily: 'Literata'),
           ),
           Text(
-            'Description: ${packageDescription}',
+            'Description: $packageDescription',
             style: const TextStyle(
                 fontSize: 18,
                 color: Color.fromRGBO(0, 0, 0, 0.6),
@@ -36,13 +38,13 @@ class PackageWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Price: ${packagePrice}',
+                'Price: $packagePrice',
                 style: const TextStyle(
                     fontSize: 16,
                     color: Color.fromRGBO(0, 0, 0, 0.6),
                     fontFamily: 'Literata'),
               ),
-              Icon(
+              const Icon(
                 Icons.edit,
                 color: Color.fromRGBO(0, 0, 0, 0.6),
               ),

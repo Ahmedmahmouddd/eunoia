@@ -1,16 +1,14 @@
 // ignore_for_file: file_names, sized_box_for_whitespace, non_constant_identifier_names, use_build_context_synchronously
 import 'package:eunoia/Screens/Home.dart';
-import 'package:eunoia/Screens/login/LoginPage.dart';
+import 'package:eunoia/features/sign_form/login/presentation/views/LoginPage.dart';
 import 'package:eunoia/Widgets/input_form_field2.dart';
-import 'package:eunoia/config/config.dart';
-import 'package:eunoia/extensions/sized_box_helper.dart';
-import 'package:eunoia/models/registerModels/register_request_model.dart';
+import 'package:eunoia/core/extensions/sized_box_helper.dart';
+import 'package:eunoia/features/sign_form/register/data/models/register_request_model.dart';
 import 'package:eunoia/services/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:snippet_coder_utils/FormHelper.dart';
 import 'package:snippet_coder_utils/ProgressHUD.dart';
-import '../../Constants/Constants.dart';
+import '../../../../../core/Constants/Constants.dart';
 
 class RegisterPage1 extends StatefulWidget {
   const RegisterPage1({super.key});
@@ -28,6 +26,8 @@ class _RegisterPage1State extends State<RegisterPage1> {
   String? email;
   String? passwordConfirm;
   String? rule;
+  String? confirmPassword;
+  bool? isfieldempty = false;
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                             },
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return 'Field cannot be empty';
+                                isfieldempty = true;
                               } else {
                                 return null;
                               }
@@ -96,7 +96,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Field cannot be empty';
+                            isfieldempty = true;
                           } else {
                             return null;
                           }
@@ -112,7 +112,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Field cannot be empty';
+                            isfieldempty = true;
                           } else {
                             return null;
                           }
@@ -134,7 +134,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Field cannot be empty';
+                            isfieldempty = true;
                           } else {
                             return null;
                           }
@@ -167,17 +167,22 @@ class _RegisterPage1State extends State<RegisterPage1> {
                               );
 
                               try {
-                                await ApiServices.register(model);
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text("Registration successful"),
-                                    duration: Duration(seconds: 2),
-                                  ),
-                                );
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const Home()));
+                                if (isfieldempty == false) {
+                                  await ApiServices.register(model);
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text("Registration successful"),
+                                      duration: Duration(seconds: 2),
+                                    ),
+                                  );
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => const Home()));
+                                } else {
+                                  NoFieldCanBeEmptySnackBar(context);
+                                  isfieldempty = false;
+                                }
                               } on Exception catch (error) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
@@ -263,6 +268,15 @@ class _RegisterPage1State extends State<RegisterPage1> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  void NoFieldCanBeEmptySnackBar(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('No fields can be empty'),
+        duration: Duration(seconds: 2),
       ),
     );
   }

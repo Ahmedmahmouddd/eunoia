@@ -1,5 +1,5 @@
 // ignore_for_file: file_names, must_be_immutable
-import 'package:eunoia/Constants/Constants.dart';
+import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
           child: Center(
             child: Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                   fontFamily: 'Literata',
                   fontSize: 18,
                   fontWeight: FontWeight.w400,

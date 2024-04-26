@@ -1,11 +1,11 @@
 // ignore_for_file: file_names
 
-import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Screens/EditProfile.dart';
 import 'package:eunoia/Screens/businessProfile.dart';
-import 'package:eunoia/Screens/forgot_password/ForgotPassword.dart';
+import 'package:eunoia/features/forget_password/presentation/views/ForgotPassword.dart';
 import 'package:eunoia/Screens/Requests.dart';
 import 'package:eunoia/Widgets/UserProfileOption.dart';
+import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:eunoia/services/shared_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

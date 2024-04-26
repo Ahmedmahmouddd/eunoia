@@ -1,3 +1,4 @@
+// ignore: camel_case_types
 class config {
   static const String appName = 'Eunoia';
   static const String apiURL = 'https://eunoia-api-v1-0.onrender.com/api/v1/';

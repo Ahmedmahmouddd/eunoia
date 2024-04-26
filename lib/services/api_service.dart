@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:eunoia/Constants/exceptions.dart';
-import 'package:eunoia/config/config.dart';
-import 'package:eunoia/models/loginModels/login_request_model.dart';
-import 'package:eunoia/models/loginModels/login_response_model.dart';
-import 'package:eunoia/models/registerModels/register_request_model.dart';
-import 'package:eunoia/models/registerModels/register_response_model.dart';
+import 'package:eunoia/core/Constants/exceptions.dart';
+import 'package:eunoia/core/config/config.dart';
+import 'package:eunoia/features/sign_form/login/data/models/login_request_model.dart';
+import 'package:eunoia/features/sign_form/login/data/models/login_response_model.dart';
+import 'package:eunoia/features/sign_form/register/data/models/register_request_model.dart';
+import 'package:eunoia/features/sign_form/register/data/models/register_response_model.dart';
 import 'package:eunoia/services/shared_services.dart';
 import 'package:http/http.dart' as http;
 
@@ -22,7 +22,6 @@ class ApiServices {
       body: jsonEncode(model.toJson()),
     );
     if (response.statusCode == 200 || response.statusCode == 201) {
-      print('body >>>> ${response.body}');
 
       await SharedServices.setLoginDetails(
         loginResponseModel(
@@ -32,7 +31,6 @@ class ApiServices {
 
       return true;
     } else {
-      print("exepction!!!");
       throw ServerException(jsonDecode(response.body)["message"]);
     }
   }
@@ -51,12 +49,10 @@ class ApiServices {
       if (response.statusCode == 200 || response.statusCode == 201) {
         return RegisterResponseModel.fromJson(jsonDecode(response.body));
       } else {
-        print('Registration failed');
         throw Exception('Registration failed: ${jsonDecode(response.body)['message']}');
       }
     } catch (e) {
-      print('Exception occurred during registration: $e');
-      throw e;
+      rethrow;
     }
   }
 

@@ -1,4 +1,6 @@
-import 'package:eunoia/Constants/Constants.dart';
+// ignore_for_file: file_names
+
+import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:eunoia/Screens/Home.dart';
 import 'package:eunoia/Screens/UserProfile.dart';
 import 'package:eunoia/Screens/Categories.dart';

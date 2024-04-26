@@ -1,4 +1,4 @@
-import '../Constants/Constants.dart';
+import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:eunoia/Screens/Home.dart';
 import 'package:eunoia/Screens/djs.dart';
 import 'package:eunoia/Screens/eventPlanners.dart';

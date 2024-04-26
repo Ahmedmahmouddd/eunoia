@@ -5,7 +5,7 @@ import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../Widgets/CustomButton.dart';
+import '../../../../Widgets/CustomButton.dart';
 
 class OnBoarding extends StatelessWidget {
   const OnBoarding({super.key});

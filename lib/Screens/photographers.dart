@@ -1,6 +1,6 @@
-import '../Constants/Constants.dart';
 import 'package:eunoia/Widgets/CustomAppBar.dart';
 import 'package:eunoia/Widgets/serviceCard.dart';
+import 'package:eunoia/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

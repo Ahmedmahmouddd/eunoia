@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import '../Constants/Constants.dart';
+import '../core/Constants/Constants.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({Key? key, required this.title, required this.backButton})

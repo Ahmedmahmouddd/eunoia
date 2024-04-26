@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:eunoia/Widgets/about.dart';
 import 'package:eunoia/Widgets/packagesProfile.dart';
@@ -17,9 +19,9 @@ class _SegmentControlBarState extends State<SegmentControlBar> {
 
   List<Widget> segmentScreens() {
     return [
-      AboutProfile(),
-      PackagesProfile(),
-      PhotosProfile(),
+      const AboutProfile(),
+      const PackagesProfile(),
+      const PhotosProfile(),
     ];
   }
 
@@ -103,17 +105,15 @@ class _CustomSegmentedControlState extends State<CustomSegmentedControl> {
   }
 
   Widget _buildSegment(String text, bool isSelected) {
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Text(
-          text,
-          style: TextStyle(
-            fontSize: 18,
-            fontFamily: 'Literata', // You can specify your own font here
-            color: const Color.fromRGBO(0, 0, 0, 0.6),
-            fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-          ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 18,
+          fontFamily: 'Literata', // You can specify your own font here
+          color: const Color.fromRGBO(0, 0, 0, 0.6),
+          fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
         ),
       ),
     );

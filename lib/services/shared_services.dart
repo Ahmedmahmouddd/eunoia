@@ -1,9 +1,11 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:convert';
 
 import 'package:api_cache_manager/models/cache_db_model.dart';
 import 'package:api_cache_manager/utils/cache_manager.dart';
-import 'package:eunoia/Screens/login/LoginPage.dart';
-import 'package:eunoia/models/loginModels/login_response_model.dart';
+import 'package:eunoia/features/sign_form/login/presentation/views/LoginPage.dart';
+import 'package:eunoia/features/sign_form/login/data/models/login_response_model.dart';
 import 'package:flutter/material.dart';
 
 class SharedServices {
@@ -39,7 +41,7 @@ class SharedServices {
   static Future<void> logout(BuildContext context) async {
     await APICacheManager().deleteCache("login_details");
     Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return LoginPage();
+      return const LoginPage();
     }));
   }
 }

@@ -1,17 +1,17 @@
 // ignore_for_file: unused_import
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:eunoia/Constants/cash_storage.dart';
+import 'package:eunoia/core/constants/cash_storage.dart';
 import 'package:eunoia/Screens/Home.dart';
-import 'package:eunoia/Screens/login/LoginPage.dart';
+import 'package:eunoia/features/sign_form/login/presentation/views/LoginPage.dart';
 import 'package:eunoia/Screens/onboarding/OnBoarding.dart';
 import 'package:eunoia/Screens/Categories.dart';
 import 'package:eunoia/Screens/navigationBar.dart';
-import 'package:eunoia/config/config.dart';
+import 'package:eunoia/core/config/config.dart';
 import 'package:eunoia/services/shared_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';
-import 'Constants/Constants.dart';
+import 'core/constants/constants.dart';
 
 Widget defaultHome = const LoginPage();
 
@@ -19,8 +19,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Get result of the login function.
-  bool _result = await SharedServices.isLoggedIn();
-  if (_result) {
+  bool result = await SharedServices.isLoggedIn();
+  if (result) {
     defaultHome = const Home();
   }
 

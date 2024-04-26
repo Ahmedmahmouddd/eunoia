@@ -1,8 +1,8 @@
 // ignore_for_file: non_constant_identifier_names, file_names
 
-import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Widgets/InverseRequestAcceptButton.dart';
 import 'package:eunoia/Widgets/RequestAcceptButton.dart';
+import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 
 class RequestCard extends StatelessWidget {

@@ -1,16 +1,14 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, unnecessary_const
 // ignore_for_file: file_names,  non_constant_identifier_names, must_be_immutable
 import 'package:eunoia/Screens/navigationBar.dart';
+import 'package:eunoia/features/sign_form/register/presentation/views/RegisterPage1.dart';
 import 'package:eunoia/Widgets/input_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:snippet_coder_utils/ProgressHUD.dart';
-import 'package:eunoia/Constants/Constants.dart';
-import 'package:eunoia/Screens/Home.dart';
-import 'package:eunoia/Screens/forgot_password/ForgotPassword.dart';
-import 'package:eunoia/Screens/register/RegisterPage1.dart';
-import 'package:eunoia/Widgets/CustomButton.dart';
-import 'package:eunoia/models/loginModels/login_request_model.dart';
+import 'package:eunoia/core/Constants/Constants.dart';
+import 'package:eunoia/features/forget_password/presentation/views/ForgotPassword.dart';
+import 'package:eunoia/features/sign_form/login/data/models/login_request_model.dart';
 import 'package:eunoia/services/api_service.dart';
 
 class LoginPage extends StatefulWidget {
@@ -89,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                         icon: const Icon(
                           Icons.lock_outline,
                           size: 28,
-                          color: const Color.fromRGBO(0, 0, 0, 0.6),
+                          color: Color.fromRGBO(0, 0, 0, 0.6),
                         ),
                         title: 'Password',
                         hidePassword: hidePassword,
@@ -199,7 +197,7 @@ class _LoginPageState extends State<LoginPage> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return PageView();
+                                return const RegisterPage1();
                               }));
                             },
                             child: Text(

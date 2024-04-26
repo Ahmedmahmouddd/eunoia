@@ -1,9 +1,9 @@
 // ignore_for_file: file_names, non_constant_identifier_names
 
-import 'package:eunoia/Constants/Constants.dart';
 import 'package:eunoia/Widgets/CustomAppBar.dart';
 import 'package:eunoia/Widgets/SearchScreenBar.dart';
 import 'package:eunoia/Widgets/SearchScreenButton.dart';
+import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 
 class Search extends StatelessWidget {

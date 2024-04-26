@@ -1,11 +1,13 @@
 // ignore_for_file: file_names
-import 'package:eunoia/Constants/Constants.dart';
-import 'package:eunoia/Screens/register/RegisterPage3.dart';
+import 'package:flutter/material.dart';
+
+import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:eunoia/Screens/navigationBar.dart';
+import 'package:eunoia/features/sign_form/register/presentation/views/RegisterPage3.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
 import 'package:eunoia/Widgets/InverseCustomButton.dart';
-import 'package:flutter/material.dart';
-import '../login/LoginPage.dart';
+
+import '../../../login/presentation/views/LoginPage.dart';
 
 class RegisterPage2 extends StatelessWidget {
   const RegisterPage2({super.key});
@@ -58,7 +60,7 @@ class RegisterPage2 extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return LoginPage();
+                    return const LoginPage();
                   }));
                 },
                 child: Text(

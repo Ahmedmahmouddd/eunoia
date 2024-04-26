@@ -1,5 +1,6 @@
-// ignore: file_names
-import 'package:eunoia/Constants/Constants.dart';
+// ignore_for_file: use_key_in_widget_constructors, file_names
+
+import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:eunoia/Widgets/nearbyCard.dart';
 import 'package:eunoia/Widgets/offerCard.dart';
 import 'package:eunoia/Widgets/popularCard.dart';
