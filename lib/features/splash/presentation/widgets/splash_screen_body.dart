@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:eunoia/Screens/navigationBar.dart';
 import 'package:eunoia/features/home/presentation/views/home.dart';
 import 'package:eunoia/features/sign_form/on_boarding/views/onboarding.dart';
 import 'package:eunoia/features/splash/presentation/widgets/sliding_logo.dart';
@@ -65,7 +66,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
   void NavigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return const Home();
+        return const MainNav();
       }));
     });
   }

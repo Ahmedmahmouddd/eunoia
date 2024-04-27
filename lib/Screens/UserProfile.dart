@@ -6,10 +6,11 @@ import 'package:eunoia/features/forget_password/presentation/views/ForgotPasswor
 import 'package:eunoia/Screens/Requests.dart';
 import 'package:eunoia/Widgets/UserProfileOption.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
-import 'package:eunoia/services/shared_services.dart';
+import 'package:eunoia/features/sign_form/login/presentation/views/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../Widgets/CircularPictureWithHalfMoonShadow.dart';
 
 class UserProfile extends StatelessWidget {
@@ -89,7 +90,17 @@ class UserProfile extends StatelessWidget {
             UserProfileOption(
               icon: Icons.logout_outlined,
               data: 'Logout',
-              ontap: () {},
+              ontap: () async {
+                final SharedPreferences sharedPreferences =
+                    await SharedPreferences.getInstance();
+                sharedPreferences.remove('email');
+                // ignore: use_build_context_synchronously
+                PersistentNavBarNavigator.pushNewScreen(
+                  context,
+                  screen: const LoginPage(),
+                  withNavBar: false,
+                );
+              },
             ),
           ],
         ));

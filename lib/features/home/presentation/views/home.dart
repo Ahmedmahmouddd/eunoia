@@ -31,7 +31,10 @@ class Home extends StatelessWidget {
           Expanded(
             child: PopularCardListView(),
           ),
-          HomeScreenText(text: 'Nearby'),
+          Padding(
+            padding: EdgeInsets.only(top: 10),
+            child: HomeScreenText(text: 'Nearby'),
+          ),
           Padding(
             padding: EdgeInsets.only(left: 20, bottom: 10),
             child: Row(
@@ -39,12 +42,12 @@ class Home extends StatelessWidget {
                 Icon(
                   Icons.pin_drop_outlined,
                   size: 15,
-                  color: Color.fromRGBO(0, 0, 0, .8),
+                  color: Color.fromRGBO(0, 0, 0, .7),
                 ),
                 Text(
                   'Cairo',
                   style: TextStyle(
-                    color: Color.fromRGBO(0, 0, 0, .8),
+                    color: Color.fromRGBO(0, 0, 0, .7),
                     fontFamily: 'Literata',
                     fontSize: 14,
                   ),
