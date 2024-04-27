@@ -89,9 +89,7 @@ class UserProfile extends StatelessWidget {
             UserProfileOption(
               icon: Icons.logout_outlined,
               data: 'Logout',
-              ontap: () {
-                SharedServices.logout(context);
-              },
+              ontap: () {},
             ),
           ],
         ));

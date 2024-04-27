@@ -5,6 +5,7 @@ import 'package:eunoia/features/sign_form/register/presentation/views/register_p
 import 'package:eunoia/Widgets/input_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:snippet_coder_utils/ProgressHUD.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:eunoia/features/forget_password/presentation/views/ForgotPassword.dart';
@@ -25,7 +26,8 @@ class _LoginPageState extends State<LoginPage> {
 
   String? email;
   String? password;
-
+  TextEditingController emailcontroller = TextEditingController();
+  TextEditingController passwordcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -66,6 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: 16.h),
                       InputFormField(
+                        controller: emailcontroller,
                         icon: const Icon(Icons.email_outlined,
                             size: 28,
                             color: const Color.fromRGBO(0, 0, 0, 0.6)),
@@ -134,6 +137,10 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         onPressed: () async {
                           if (validateAndSave()) {
+                            final SharedPreferences sharedPreferences =
+                                await SharedPreferences.getInstance();
+                            sharedPreferences.setString(
+                                'email', emailcontroller.text);
                             setState(() {
                               isApiCallProcess = true;
                             });

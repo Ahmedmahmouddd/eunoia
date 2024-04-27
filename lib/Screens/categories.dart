@@ -48,42 +48,42 @@ class _CategoriesState extends State<Categories> {
 
 List<CategoryCard> categoryCards = [
   CategoryCard(
-    categoryImage: 'assets/venues.png',
+    categoryImage: 'assets/images/venues.png',
     categoryName: 'VENUES',
     screen: const Venues(),
   ),
   CategoryCard(
-    categoryImage: 'assets/photographers.png',
+    categoryImage: 'assets/images/photographers.png',
     categoryName: 'PHOTOGRAPHERS',
     screen: const Photographers(),
   ),
   CategoryCard(
-    categoryImage: 'assets/eventplanners.png',
+    categoryImage: 'assets/images/eventplanners.png',
     categoryName: 'EVENT PLANNERS',
     screen: const EventPlanners(),
   ),
   CategoryCard(
-    categoryImage: 'assets/djs.png',
+    categoryImage: 'assets/images/djs.png',
     categoryName: 'DJs',
     screen: const Djs(),
   ),
   CategoryCard(
-    categoryImage: 'assets/makeupartists.png',
+    categoryImage: 'assets/images/makeupartists.png',
     categoryName: 'MAKEUP ARTISTS',
     screen: const MakeupArtists(),
   ),
   CategoryCard(
-    categoryImage: 'assets/food.png',
+    categoryImage: 'assets/images/food.png',
     categoryName: 'FOOD',
     screen: const Food(),
   ),
   CategoryCard(
-    categoryImage: 'assets/hairstylists.png',
+    categoryImage: 'assets/images/hairstylists.png',
     categoryName: 'HAIR STYLISTS',
     screen: const HairStylists(),
   ),
   CategoryCard(
-    categoryImage: 'assets/otherdetails.png',
+    categoryImage: 'assets/images/otherdetails.png',
     categoryName: 'OTHER DETAILS',
     screen: const OtherDetails(),
   ),

@@ -46,7 +46,7 @@ class ServiceCard extends StatelessWidget {
                       // ignore: avoid_unnecessary_containers
                       Container(
                         child: Image.asset(
-                          'assets/cover.png',
+                          'assets/images/cover.png',
                           fit: BoxFit.fill,
                           width: screenWidth * 0.99,
                         ),
@@ -66,7 +66,7 @@ class ServiceCard extends StatelessWidget {
                           //SizedBox(width: 16.h),
                           Padding(
                             padding: EdgeInsets.only(left: 16.0.w),
-                            child: Image.asset('assets/profilepic.png'),
+                            child: Image.asset('assets/images/profilepic.png'),
                           ),
                           Padding(
                             padding: EdgeInsets.only(right: 16.0.w, top: 38.h),

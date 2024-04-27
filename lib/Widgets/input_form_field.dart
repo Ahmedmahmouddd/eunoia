@@ -7,7 +7,7 @@ class InputFormField extends StatelessWidget {
   final String? Function(String?)? validator;
   final VoidCallback? onPressed;
   final String title;
-  final Icon icon;
+  final Icon icon; final TextEditingController? controller;
   const InputFormField({
     Key? key,
     required this.hidePassword,
@@ -15,7 +15,7 @@ class InputFormField extends StatelessWidget {
     required this.validator,
     this.onPressed,
     required this.title,
-    required this.icon,
+    required this.icon, this.controller,
   }) : super(key: key);
 
   @override
@@ -52,7 +52,7 @@ class InputFormField extends StatelessWidget {
                 ),
                 const SizedBox(width: 5),
                 Expanded(
-                  child: TextFormField(
+                  child: TextFormField(controller: controller,
                     obscureText: hidePassword,
                     onSaved: onSaved,
                     validator: validator,

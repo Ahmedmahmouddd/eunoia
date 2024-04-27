@@ -2,7 +2,7 @@
 import 'package:eunoia/features/forget_password/presentation/views/NewPassword.dart';
 import 'package:eunoia/Widgets/CustomAppBar.dart';
 import 'package:eunoia/Widgets/CustomButton.dart';
-import 'package:eunoia/Widgets/OTPContainer.dart';
+import 'package:eunoia/features/forget_password/presentation/widgets/OTPContainer.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
