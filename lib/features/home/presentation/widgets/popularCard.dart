@@ -15,8 +15,15 @@ class PopularCard extends StatelessWidget {
       child: Container(
         width: 135.w,
         height: 125.h,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(.01),
+              offset: const Offset(-1, 0),
+              blurRadius: 10,
+            ),
+          ],
         ),
         child: Stack(
           children: [

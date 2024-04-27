@@ -1,7 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:eunoia/Screens/navigationBar.dart';
-import 'package:eunoia/features/home/presentation/views/home.dart';
 import 'package:eunoia/features/sign_form/on_boarding/views/onboarding.dart';
 import 'package:eunoia/features/splash/presentation/widgets/sliding_logo.dart';
 import 'package:flutter/material.dart';

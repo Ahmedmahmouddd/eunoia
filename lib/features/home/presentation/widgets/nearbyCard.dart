@@ -15,8 +15,15 @@ class NearbyCard extends StatelessWidget {
       child: SizedBox(
         child: Container(
           width: 209.w,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(.1),
+                offset: const Offset(-5, 2),
+                blurRadius: 10,
+              ),
+            ],
           ),
           child: Stack(
             children: [

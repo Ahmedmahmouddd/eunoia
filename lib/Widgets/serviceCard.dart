@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 
-import 'package:eunoia/Screens/ServiceMain.dart';
+import 'package:eunoia/features/business/presentation/views/businessPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -17,7 +17,7 @@ class ServiceCard extends StatelessWidget {
       onTap: () {
         PersistentNavBarNavigator.pushNewScreen(
           context,
-          screen: const ServiceMain(),
+          screen: const BusinessPage(),
           withNavBar: false,
         );
       },
