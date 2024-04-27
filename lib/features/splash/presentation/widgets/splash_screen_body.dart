@@ -23,8 +23,8 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
 
   @override
   void initState() {
+    InitSlidingAnimation();
     getValidationData().whenComplete(() async {
-      InitSlidingAnimation();
       finalEmail == null ? NavigateToOnBoarding() : NavigateToHome();
     });
 

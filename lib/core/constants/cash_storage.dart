@@ -1,31 +1,31 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class CacheStorage {
-  static late final SharedPreferences _sharedPrefrences;
+class CacheData {
+  static late final SharedPreferences sharedPrefrences;
 
-  static Future<void> init() async {
-    _sharedPrefrences = await SharedPreferences.getInstance();
+  static Future<void> casheInitialization() async {
+    sharedPrefrences = await SharedPreferences.getInstance();
   }
 
-  static void write(String key, dynamic value) {
+  static void setData(String key, dynamic value) {
     if (value is String) {
-      _sharedPrefrences.setString(key, value);
+      sharedPrefrences.setString(key, value);
     } else if (value is int) {
-      _sharedPrefrences.setInt(key, value);
+      sharedPrefrences.setInt(key, value);
     } else if (value is double) {
-      _sharedPrefrences.setDouble(key, value);
+      sharedPrefrences.setDouble(key, value);
     } else if (value is bool) {
-      _sharedPrefrences.setBool(key, value);
+      sharedPrefrences.setBool(key, value);
     } else if (value is List<String>) {
-      _sharedPrefrences.setStringList(key, value);
+      sharedPrefrences.setStringList(key, value);
     }
   }
 
-  static dynamic read(String key) {
-    return _sharedPrefrences.get(key);
+  static dynamic getData(String key) {
+    return sharedPrefrences.get(key);
   }
 
   static Future<void> clearAll() async {
-    await _sharedPrefrences.clear();
+    await sharedPrefrences.clear();
   }
 }

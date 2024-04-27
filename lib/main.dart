@@ -16,7 +16,9 @@ import 'core/constants/constants.dart';
 
 Widget defaultHome = const LoginPage();
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheData.casheInitialization();
   runApp(const Eunoia());
 }
 
