@@ -1,4 +1,4 @@
-import 'package:eunoia/features/home/presentation/widgets/offerCard.dart';
+import 'package:eunoia/features/home/presentation/widgets/offer_card.dart';
 import 'package:flutter/material.dart';
 
 class OfferCardlistlView extends StatelessWidget {

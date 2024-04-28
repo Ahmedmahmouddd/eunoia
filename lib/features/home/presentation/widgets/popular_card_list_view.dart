@@ -1,4 +1,4 @@
-import 'package:eunoia/features/home/presentation/widgets/popularCard.dart';
+import 'package:eunoia/features/home/presentation/widgets/popular_card.dart';
 import 'package:flutter/material.dart';
 
 class PopularCardListView extends StatelessWidget {

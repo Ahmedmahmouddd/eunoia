@@ -1,4 +1,4 @@
-import 'package:eunoia/features/home/presentation/widgets/nearbyCard.dart';
+import 'package:eunoia/features/home/presentation/widgets/nearby_card.dart';
 import 'package:flutter/material.dart';
 
 class NearbyCardListView extends StatelessWidget {

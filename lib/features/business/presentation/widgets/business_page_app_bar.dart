@@ -1,8 +1,9 @@
 import 'package:eunoia/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 
-class CustomBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomBar({
+class BusinessPageAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
+  const BusinessPageAppBar({
     Key? key,
     required this.title,
   })  : preferredSize = const Size.fromHeight(kToolbarHeight),

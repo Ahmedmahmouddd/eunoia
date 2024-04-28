@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 
-import 'package:eunoia/features/business/presentation/views/businessPage.dart';
+import 'package:eunoia/features/business/presentation/views/business_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -47,7 +47,7 @@ class ServiceCard extends StatelessWidget {
                       Container(
                         child: Image.asset(
                           'assets/images/cover.png',
-                          fit: BoxFit.fill,
+                          fit: BoxFit.cover,
                           width: screenWidth * 0.99,
                         ),
                       ),
