@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-String? finalEmail;
+String? token;
 
 class SplashScreenBody extends StatefulWidget {
   const SplashScreenBody({super.key});
@@ -25,7 +25,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
   void initState() {
     InitSlidingAnimation();
     getValidationData().whenComplete(() async {
-      finalEmail == null ? NavigateToOnBoarding() : NavigateToHome();
+      token == null ? NavigateToOnBoarding() : NavigateToHome();
     });
 
     super.initState();
@@ -34,11 +34,11 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
   Future getValidationData() async {
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
-    var obtainedEmail = sharedPreferences.getString('email');
+    var obtainedToken = sharedPreferences.getString('token');
     setState(() {
-      finalEmail = obtainedEmail;
+      token = obtainedToken;
     });
-    print(finalEmail);
+    print(token);
   }
 
   @override

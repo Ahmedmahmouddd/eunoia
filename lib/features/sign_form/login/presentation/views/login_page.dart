@@ -5,7 +5,6 @@ import 'package:eunoia/features/sign_form/register/presentation/views/register_p
 import 'package:eunoia/Widgets/input_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:snippet_coder_utils/ProgressHUD.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:eunoia/features/forget_password/presentation/views/ForgotPassword.dart';
@@ -20,14 +19,13 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  GlobalKey<FormState> globalformKey = GlobalKey<FormState>();
   bool isApiCallProcess = false;
   bool hidePassword = true;
-  GlobalKey<FormState> globalformKey = GlobalKey<FormState>();
-
   String? email;
   String? password;
-  TextEditingController emailcontroller = TextEditingController();
-  TextEditingController passwordcontroller = TextEditingController();
+  bool? isfieldempty = false;
+
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -68,7 +66,6 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: 16.h),
                       InputFormField(
-                        controller: emailcontroller,
                         icon: const Icon(Icons.email_outlined,
                             size: 28,
                             color: const Color.fromRGBO(0, 0, 0, 0.6)),
@@ -79,10 +76,9 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Field cannot be empty';
-                          } else {
-                            return null;
+                            isfieldempty = true;
                           }
+                          return null;
                         },
                       ),
                       SizedBox(height: 13.h),
@@ -99,15 +95,13 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Field cannot be empty';
-                          } else {
-                            return null;
+                            isfieldempty = true;
                           }
+                          return null;
                         },
                         onPressed: () {
                           setState(() {
-                            hidePassword =
-                                !hidePassword; // Toggle password visibility
+                            hidePassword = !hidePassword;
                           });
                         },
                       ),
@@ -137,10 +131,6 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         onPressed: () async {
                           if (validateAndSave()) {
-                            final SharedPreferences sharedPreferences =
-                                await SharedPreferences.getInstance();
-                            sharedPreferences.setString(
-                                'email', emailcontroller.text);
                             setState(() {
                               isApiCallProcess = true;
                             });
@@ -148,19 +138,22 @@ class _LoginPageState extends State<LoginPage> {
                                 email: email!, password: password!);
 
                             try {
-                              await ApiServices.login(model);
-                              if (!context.mounted) return;
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (_) => const MainNav()));
+                              if (isfieldempty == false) {
+                                await ApiServices.login(model);
+                                if (!context.mounted) return;
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => const MainNav()));
+                              } else {
+                                  NoFieldCanBeEmptySnackBar(context);
+                                  isfieldempty = false;
+                                }
                             } catch (error) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text(error.toString()),
-                                  duration: const Duration(
-                                      seconds:
-                                          2), // Adjust the duration as needed
+                                  duration: const Duration(seconds: 3),
                                 ),
                               );
                             } finally {
@@ -238,3 +231,12 @@ class _LoginPageState extends State<LoginPage> {
     return false;
   }
 }
+
+  void NoFieldCanBeEmptySnackBar(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('No fields can be empty'),
+        duration: Duration(seconds: 2),
+      ),
+    );
+  }
