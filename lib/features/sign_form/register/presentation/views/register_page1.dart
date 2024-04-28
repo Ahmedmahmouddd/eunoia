@@ -18,9 +18,9 @@ class RegisterPage1 extends StatefulWidget {
 }
 
 class _RegisterPage1State extends State<RegisterPage1> {
+  GlobalKey<FormState> globalformKey = GlobalKey<FormState>();
   bool isApiCallProcess = false;
   bool hidePassword = true;
-  GlobalKey<FormState> globalformKey = GlobalKey<FormState>();
   String? username;
   String? password;
   String? email;
@@ -79,7 +79,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 isfieldempty = true;
-                              } 
+                              }
                               return null;
                             },
                           ),
@@ -96,7 +96,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             isfieldempty = true;
-                          } 
+                          }
                           return null;
                         },
                       ),
@@ -111,7 +111,8 @@ class _RegisterPage1State extends State<RegisterPage1> {
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             isfieldempty = true;
-                          }return null;
+                          }
+                          return null;
                         },
                         onPressed: () {
                           setState(() {
@@ -131,9 +132,8 @@ class _RegisterPage1State extends State<RegisterPage1> {
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             isfieldempty = true;
-                          } 
-                            return null;
-                          
+                          }
+                          return null;
                         },
                         onPressed: () {
                           setState(() {
@@ -152,7 +152,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                             if (validateAndSave()) {
                               setState(() {
                                 isApiCallProcess =
-                                    true; // Set to true to indicate API call in progress
+                                    true; 
                               });
                               RegisterRequestModel model = RegisterRequestModel(
                                 email: email!,

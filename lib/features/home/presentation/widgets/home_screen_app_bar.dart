@@ -1,10 +1,9 @@
 import 'package:eunoia/core/Constants/Constants.dart';
-import 'package:eunoia/features/sign_form/login/presentation/views/login_page.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class HomeScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const HomeScreenAppBar({super.key});
+
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
@@ -27,17 +26,7 @@ class HomeScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             ),
             GestureDetector(
-              onTap: () async {
-                final SharedPreferences sharedPreferences =
-                    await SharedPreferences.getInstance();
-                sharedPreferences.remove('email');
-                // ignore: use_build_context_synchronously
-                PersistentNavBarNavigator.pushNewScreen(
-                  context,
-                  screen: const LoginPage(),
-                  withNavBar: false,
-                );
-              },
+              onTap: () {},
               child: const Icon(
                 Icons.favorite_border_outlined,
                 size: 29,

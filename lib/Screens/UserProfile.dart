@@ -2,6 +2,7 @@
 
 import 'package:eunoia/Screens/EditProfile.dart';
 import 'package:eunoia/Screens/businessProfile.dart';
+import 'package:eunoia/core/constants/cash_storage.dart';
 import 'package:eunoia/features/forget_password/presentation/views/ForgotPassword.dart';
 import 'package:eunoia/Screens/Requests.dart';
 import 'package:eunoia/Widgets/UserProfileOption.dart';
@@ -91,9 +92,7 @@ class UserProfile extends StatelessWidget {
               icon: Icons.logout_outlined,
               data: 'Logout',
               ontap: () async {
-                final SharedPreferences sharedPreferences =
-                    await SharedPreferences.getInstance();
-                sharedPreferences.remove('email');
+                CacheData.clearKey(key: 'token');
                 // ignore: use_build_context_synchronously
                 PersistentNavBarNavigator.pushNewScreen(
                   context,

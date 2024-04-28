@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:eunoia/core/Constants/exceptions.dart';
 import 'package:eunoia/core/config/config.dart';
+import 'package:eunoia/core/constants/cash_storage.dart';
 import 'package:eunoia/features/sign_form/login/data/models/login_request_model.dart';
-import 'package:eunoia/features/sign_form/login/data/models/login_response_model.dart';
 import 'package:eunoia/features/sign_form/register/data/models/register_request_model.dart';
 import 'package:eunoia/features/sign_form/register/data/models/register_response_model.dart';
 import 'package:eunoia/services/shared_services.dart';
@@ -22,13 +22,8 @@ class ApiServices {
       body: jsonEncode(model.toJson()),
     );
     if (response.statusCode == 200 || response.statusCode == 201) {
-
-      await SharedServices.setLoginDetails(
-        loginResponseModel(
-          response.body,
-        ),
-      );
-
+      var responseData = jsonDecode(response.body);
+      CacheData.setData('token', responseData["token"]);
       return true;
     } else {
       throw ServerException(jsonDecode(response.body)["message"]);
@@ -47,9 +42,12 @@ class ApiServices {
       );
 
       if (response.statusCode == 200 || response.statusCode == 201) {
+        var responseData = jsonDecode(response.body);
+        CacheData.setData('token', responseData["token"]);
         return RegisterResponseModel.fromJson(jsonDecode(response.body));
       } else {
-        throw Exception('Registration failed: ${jsonDecode(response.body)['message']}');
+        throw Exception(
+            'Registration failed: ${jsonDecode(response.body)['message']}');
       }
     } catch (e) {
       rethrow;
