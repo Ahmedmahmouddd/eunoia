@@ -1,13 +1,12 @@
 // ignore_for_file: file_names
 
+import 'package:eunoia/features/home/data/models/top_services/top_services_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OfferCard extends StatelessWidget {
-  const OfferCard({
-    super.key,
-  });
-
+  const OfferCard({super.key, required this.topService});
+  final TopService topService;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,23 +14,24 @@ class OfferCard extends StatelessWidget {
       child: Container(
         width: 240.w,
         height: 125.h,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
-            image: AssetImage(
-              'assets/images/offer.png',
-            ),
-          ),
+              image: NetworkImage(topService.avatar ??
+                  'https://st4.depositphotos.com/14953852/24787/v/1600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg'),
+              fit: BoxFit.fill),
         ),
-        child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 24),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 '-20%',
-                style: TextStyle(
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style:  TextStyle(
                   color: Colors.white,
                   fontFamily: 'Literata',
                   fontSize: 30,
@@ -39,8 +39,9 @@ class OfferCard extends StatelessWidget {
                 ),
               ),
               Text(
-                'Karim Roshdy',
-                style: TextStyle(
+                topService.businessName ?? '',maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
                   color: Colors.white,
                   fontFamily: 'Literata',
                   fontSize: 20,
@@ -51,15 +52,16 @@ class OfferCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Photographer',
-                    style: TextStyle(
+                    topService.businessCategory ?? '',maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontFamily: 'Literata',
                       fontSize: 14,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                  Column(
+                  const Column(
                     children: [
                       Text(
                         'View Details',
