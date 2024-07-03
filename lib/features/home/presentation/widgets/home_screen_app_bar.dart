@@ -17,7 +17,7 @@ class HomeScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
-              'Hey, Islam',
+              'Hey, Sara',
               style: TextStyle(
                 fontFamily: 'Literata',
                 fontWeight: FontWeight.normal,

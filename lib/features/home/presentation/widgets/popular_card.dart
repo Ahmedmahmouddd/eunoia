@@ -1,13 +1,15 @@
 // ignore_for_file: file_names
 
+import 'package:eunoia/features/home/data/models/popular_services/popular_service_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PopularCard extends StatelessWidget {
   const PopularCard({
     super.key,
+    required this.popularService,
   });
-
+  final PopularService popularService;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,13 +30,12 @@ class PopularCard extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
                 image: DecorationImage(
-                  image: AssetImage(
-                    'assets/images/popular.png',
-                  ),
-                ),
+                      image: NetworkImage(popularService.avatar ??
+                          'https://st4.depositphotos.com/14953852/24787/v/1600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg'),
+                      fit: BoxFit.fill),
               ),
             ),
             Column(
@@ -49,15 +50,16 @@ class PopularCard extends StatelessWidget {
                 )
               ],
             ),
-            const Padding(
-              padding: EdgeInsets.only(bottom: 6.0, left: 5.0),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 6.0, left: 5.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Amr Abdallah',
-                    style: TextStyle(
+                    popularService.businessName ?? '',maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
                       color: Color.fromRGBO(0, 0, 0, .6),
                       fontFamily: 'Literata',
                       fontSize: 16,
@@ -65,8 +67,9 @@ class PopularCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Photographer',
-                    style: TextStyle(
+                    popularService.about ?? '',maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
                       color: Color.fromRGBO(0, 0, 0, .6),
                       fontFamily: 'Literata',
                       fontSize: 12,
