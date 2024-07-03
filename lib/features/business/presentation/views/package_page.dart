@@ -1,6 +1,8 @@
 import 'package:eunoia/core/constants/constants.dart';
 import 'package:eunoia/features/business/presentation/widgets/business_page_app_bar.dart';
 import 'package:eunoia/features/business/presentation/widgets/cover_with_title.dart';
+import 'package:eunoia/features/business/presentation/widgets/request_sheet.dart';
+import 'package:eunoia/features/business/presentation/widgets/review_card.dart';
 import 'package:eunoia/features/business/presentation/widgets/toggle_button.dart';
 import 'package:eunoia/features/business/presentation/widgets/section_title.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +38,9 @@ class _PackagePageState extends State<PackagePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             GestureDetector(
+              onTap: () {
+                showRequestSheet(context);
+              },
               child: Container(
                 height: 40.h,
                 width: 275.w,
@@ -157,6 +162,124 @@ class _PackagePageState extends State<PackagePage> {
                   indent: 100,
                 ),
               ),
+              const SectionTitle(title: 'Details'),
+              ToggleButton(
+                text: 'Decorations',
+                initialValue: false,
+                price: 2500,
+                onSelect: handlePriceSelection,
+              ),
+              ToggleButton(
+                text: 'DJ',
+                initialValue: false,
+                price: 1500,
+                onSelect: handlePriceSelection,
+              ),
+              ToggleButton(
+                text: 'All day video',
+                initialValue: false,
+                price: 3000,
+                onSelect: handlePriceSelection,
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Divider(
+                  endIndent: 100,
+                  indent: 100,
+                ),
+              ),
+              const SectionTitle(title: 'Meals'),
+              ToggleButton(
+                text: '1/4 chicken, 2pcs kofta, rice',
+                initialValue: false,
+                price: 5000,
+                onSelect: handlePriceSelection,
+              ),
+              ToggleButton(
+                text: 'Steak, 2pcs shish tawook, rice',
+                initialValue: false,
+                price: 7500,
+                onSelect: handlePriceSelection,
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Divider(
+                  endIndent: 100,
+                  indent: 100,
+                ),
+              ),
+              const SectionTitle(title: 'Desserts plate'),
+              ToggleButton(
+                text: 'Gateau',
+                initialValue: false,
+                price: 3000,
+                onSelect: handlePriceSelection,
+              ),
+              ToggleButton(
+                text: '3pcs gateau soiree',
+                initialValue: false,
+                price: 3200,
+                onSelect: handlePriceSelection,
+              ),
+              ToggleButton(
+                text: '2 mini pizza',
+                initialValue: false,
+                price: 2000,
+                onSelect: handlePriceSelection,
+              ),
+              ToggleButton(
+                text: '2 sticks baton sale',
+                initialValue: false,
+                price: 1500,
+                onSelect: handlePriceSelection,
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Divider(
+                  endIndent: 100,
+                  indent: 100,
+                ),
+              ),
+              const SectionTitle(title: 'Drinks'),
+              ToggleButton(
+                text: 'Soft drinks',
+                initialValue: false,
+                price: 3000,
+                onSelect: handlePriceSelection,
+              ),
+              ToggleButton(
+                text: 'Small water bottle per person',
+                initialValue: false,
+                price: 3200,
+                onSelect: handlePriceSelection,
+              ),
+              ToggleButton(
+                text: '2 big water bottles per table',
+                initialValue: false,
+                price: 2000,
+                onSelect: handlePriceSelection,
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Divider(
+                  endIndent: 60,
+                  indent: 60,
+                ),
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SectionTitle(title: 'Reviews'),
+                  Padding(
+                    padding: EdgeInsets.only(right: 17),
+                    child: Icon(
+                      Icons.edit,
+                      color: Color.fromRGBO(0, 0, 0, .6),
+                    ),
+                  ),
+                ],
+              ),
+              const ReviewCard()
             ],
           ),
         ],
