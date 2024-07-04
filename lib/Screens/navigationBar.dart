@@ -1,14 +1,11 @@
 // ignore_for_file: file_names
-
+import 'package:eunoia/features/categories/presentation/views/categories.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
-import 'package:eunoia/features/home/data/home_cubit/home_cubit.dart';
 import 'package:eunoia/features/home/presentation/views/home.dart';
 import 'package:eunoia/Screens/UserProfile.dart';
-import 'package:eunoia/Screens/Categories.dart';
 import 'package:eunoia/Screens/ChatBot.dart';
 import 'package:eunoia/Screens/Search.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class MainNav extends StatefulWidget {

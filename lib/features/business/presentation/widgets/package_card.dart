@@ -65,7 +65,7 @@ class PackageCard extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 6.0, left: 5.0),
+                padding: const EdgeInsets.only(bottom: 6.0, left: 5.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,

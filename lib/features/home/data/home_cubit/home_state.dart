@@ -32,9 +32,9 @@ final class HomeState extends Equatable {
         homeNearbyServiceStatus: HomeNearbyServiceStatus.loading,
         homeTopServicesStatus: HomeTopServicesStatus.loading,
         homePopularStatus: HomePopularStatus.loading,
-        nearByItems: [],
-        popularItems: [],
-        topItems: [],
+        nearByItems: const [],
+        popularItems: const [],
+        topItems: const [],
       );
 
   HomeState copyWith({
@@ -55,13 +55,13 @@ final class HomeState extends Equatable {
       homeNearbyServiceStatus:
           homeNearbyServiceStatus ?? this.homeNearbyServiceStatus,
       nearByItems: nearByItems ?? this.nearByItems,
+      popularItems: popularItems ?? this.popularItems,
+      topItems: topItems ?? this.topItems,
       nearByFailureMessage: nearByFailureMessage ?? this.nearByFailureMessage,
       popularFailureMessage:
           popularFailureMessage ?? this.popularFailureMessage,
       topServiceFailureMessage:
           topServiceFailureMessage ?? this.topServiceFailureMessage,
-      popularItems: popularItems ?? this.popularItems,
-      topItems: topItems ?? this.topItems,
     );
   }
 

@@ -6,14 +6,14 @@ import 'package:eunoia/Widgets/serviceCard.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 
-class Requests extends StatelessWidget {
-  const Requests({super.key});
+class Favorites extends StatelessWidget {
+  const Favorites({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: KprimaryBeige,
-      appBar: const CustomAppBar(title: 'Requests', backButton: true),
+      appBar: const CustomAppBar(title: 'Favorites', backButton: true),
       body: ListView.builder(
         itemCount: 1,
         itemBuilder: (BuildContext context, int index) {

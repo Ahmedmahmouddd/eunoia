@@ -1,8 +1,7 @@
 import 'package:eunoia/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 
-class BusinessPageAppBar extends StatelessWidget
-    implements PreferredSizeWidget {
+class BusinessPageAppBar extends StatefulWidget implements PreferredSizeWidget {
   const BusinessPageAppBar({
     Key? key,
     required this.title,
@@ -12,6 +11,13 @@ class BusinessPageAppBar extends StatelessWidget
   @override
   final Size preferredSize;
   final String title;
+
+  @override
+  State<BusinessPageAppBar> createState() => _BusinessPageAppBarState();
+}
+
+class _BusinessPageAppBarState extends State<BusinessPageAppBar> {
+  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +34,7 @@ class BusinessPageAppBar extends StatelessWidget
       ),
       centerTitle: true,
       title: Text(
-        title,
+        widget.title,
         style: const TextStyle(
           fontFamily: 'Literata',
           fontWeight: FontWeight.bold,
@@ -42,13 +48,22 @@ class BusinessPageAppBar extends StatelessWidget
         Padding(
           padding: const EdgeInsets.only(right: 10),
           child: IconButton(
-            icon: const Icon(
-              Icons.favorite_border_outlined,
-              size: 29,
-              color: Color.fromRGBO(0, 0, 0, 0.60),
-            ),
+            icon: isFavorite == false
+                ? const Icon(
+                    Icons.favorite_border_outlined,
+                    size: 29,
+                    color: Color.fromRGBO(0, 0, 0, 0.60),
+                  )
+                : const Icon(
+                    Icons.favorite,
+                    size: 29,
+                    color: Colors.red,
+                  ),
             onPressed: () {
-              // Add your onPressed action here
+              setState(() {
+                isFavorite = !isFavorite;
+                print(isFavorite);
+              });
             },
           ),
         ),

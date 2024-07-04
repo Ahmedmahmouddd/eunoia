@@ -1,14 +1,14 @@
 import 'package:eunoia/core/Constants/Constants.dart';
-import 'package:eunoia/Screens/djs.dart';
-import 'package:eunoia/Screens/eventPlanners.dart';
-import 'package:eunoia/Screens/food.dart';
-import 'package:eunoia/Screens/hairStylists.dart';
-import 'package:eunoia/Screens/makeupArtists.dart';
-import 'package:eunoia/Screens/otherDetails.dart';
-import 'package:eunoia/Screens/photographers.dart';
-import 'package:eunoia/Screens/venues.dart';
 import 'package:eunoia/Widgets/CustomAppBar.dart';
 import 'package:eunoia/Widgets/categoryCard.dart';
+import 'package:eunoia/features/categories/presentation/views/djs.dart';
+import 'package:eunoia/features/categories/presentation/views/eventPlanners.dart';
+import 'package:eunoia/features/categories/presentation/views/food.dart';
+import 'package:eunoia/features/categories/presentation/views/hairStylists.dart';
+import 'package:eunoia/features/categories/presentation/views/makeupArtists.dart';
+import 'package:eunoia/features/categories/presentation/views/otherDetails.dart';
+import 'package:eunoia/features/categories/presentation/views/photographers.dart';
+import 'package:eunoia/features/categories/presentation/views/venues.dart';
 import 'package:eunoia/features/home/presentation/views/home.dart';
 import 'package:flutter/material.dart';
 

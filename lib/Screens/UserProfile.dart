@@ -2,6 +2,7 @@
 
 import 'package:eunoia/Screens/EditProfile.dart';
 import 'package:eunoia/Screens/businessProfile.dart';
+import 'package:eunoia/Screens/favorites.dart';
 import 'package:eunoia/core/constants/cash_storage.dart';
 import 'package:eunoia/features/forget_password/presentation/views/ForgotPassword.dart';
 import 'package:eunoia/Screens/Requests.dart';
@@ -11,7 +12,6 @@ import 'package:eunoia/features/sign_form/login/presentation/views/login_page.da
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../Widgets/CircularPictureWithHalfMoonShadow.dart';
 
 class UserProfile extends StatelessWidget {
@@ -29,7 +29,7 @@ class UserProfile extends StatelessWidget {
             SizedBox(height: 10.h),
             Center(
               child: Text(
-                'Lewis Hamilton',
+                'Ahmed Mahmoud',
                 style: TextStyle(
                   fontSize: 20.sp,
                   fontFamily: 'Literata',
@@ -64,7 +64,13 @@ class UserProfile extends StatelessWidget {
             UserProfileOption(
               icon: Icons.favorite_border,
               data: 'Favorites',
-              ontap: () {},
+              ontap: () {
+                PersistentNavBarNavigator.pushNewScreen(
+                  context,
+                  screen: const Favorites(),
+                  withNavBar: false,
+                );
+              },
             ),
             UserProfileOption(
               icon: Icons.supervisor_account_outlined,

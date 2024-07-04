@@ -17,8 +17,10 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => HomeCubit()
+        ..getTopServiceData()
         ..getNearbyServiceData()
         ..getPopularServiceData(),
+        
       child: Builder(builder: (context) {
         return Scaffold(
           backgroundColor: KprimaryBeige,
@@ -127,7 +129,7 @@ class Home extends StatelessWidget {
                   },
                 ),
               ),
-            ],
+             ],
           ),
         );
       }),

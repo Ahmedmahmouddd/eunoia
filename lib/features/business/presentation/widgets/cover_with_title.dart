@@ -72,7 +72,7 @@ class CoverWithTitle extends StatelessWidget {
                       color: Color.fromRGBO(0, 0, 0, .6),
                       size: 18,
                     )
-                  : Padding(padding: EdgeInsets.all(1)),
+                  : const Padding(padding: EdgeInsets.all(1)),
               Text(
                 location,
                 style: const TextStyle(

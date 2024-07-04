@@ -32,7 +32,7 @@ class NearbyCard extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  borderRadius: const BorderRadius.all(Radius.circular(10)),
                   image: DecorationImage(
                       image: NetworkImage(nearbyService.imageCover ??
                           'https://st4.depositphotos.com/14953852/24787/v/1600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg'),
@@ -52,7 +52,7 @@ class NearbyCard extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 6.0, left: 5.0),
+                padding: const EdgeInsets.only(bottom: 6.0, left: 5.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +61,7 @@ class NearbyCard extends StatelessWidget {
                       nearbyService.owner ?? '',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color.fromRGBO(0, 0, 0, .6),
                         fontFamily: 'Literata',
                         fontSize: 16,
@@ -72,7 +72,7 @@ class NearbyCard extends StatelessWidget {
                       nearbyService.businessCategory ?? '',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color.fromRGBO(0, 0, 0, .6),
                         fontFamily: 'Literata',
                         fontSize: 12,

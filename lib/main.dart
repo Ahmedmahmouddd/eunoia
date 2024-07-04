@@ -6,7 +6,6 @@ import 'package:eunoia/features/home/data/home_cubit/home_cubit.dart';
 import 'package:eunoia/features/home/presentation/views/home.dart';
 import 'package:eunoia/features/sign_form/login/presentation/views/login_page.dart';
 import 'package:eunoia/features/sign_form/on_boarding/views/onboarding.dart';
-import 'package:eunoia/Screens/Categories.dart';
 import 'package:eunoia/Screens/navigationBar.dart';
 import 'package:eunoia/core/config/config.dart';
 import 'package:eunoia/features/splash/presentation/views/splash_screen.dart';
