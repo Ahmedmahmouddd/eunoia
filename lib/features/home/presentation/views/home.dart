@@ -20,7 +20,6 @@ class Home extends StatelessWidget {
         ..getTopServiceData()
         ..getNearbyServiceData()
         ..getPopularServiceData(),
-        
       child: Builder(builder: (context) {
         return Scaffold(
           backgroundColor: KprimaryBeige,
@@ -94,7 +93,7 @@ class Home extends StatelessWidget {
                       color: Color.fromRGBO(0, 0, 0, .7),
                     ),
                     Text(
-                      'Cairo',
+                      'Ismailia',
                       style: TextStyle(
                         color: Color.fromRGBO(0, 0, 0, .7),
                         fontFamily: 'Literata',
@@ -129,7 +128,7 @@ class Home extends StatelessWidget {
                   },
                 ),
               ),
-             ],
+            ],
           ),
         );
       }),

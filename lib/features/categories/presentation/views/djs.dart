@@ -94,7 +94,7 @@ class _DjsState extends State<Djs> {
               child: ListView.builder(
                 itemCount: 5, // Number of items to scroll
                 itemBuilder: (context, index) {
-                  return const ServiceCard(); // Your ServiceCard widget
+                  return const ServiceCard1(); // Your ServiceCard widget
                 },
               ),
             ),

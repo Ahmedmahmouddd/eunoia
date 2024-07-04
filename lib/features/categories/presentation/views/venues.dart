@@ -102,21 +102,19 @@ class _VenuesState extends State<Venues> {
                         builder: (context, state) {
                           switch (state) {
                             case LoadingState():
-                              return Center(child: CircularProgressIndicator());
+                              return const Center(
+                                  child: CircularProgressIndicator());
                             case SuccessState():
-                              return ListView.builder(
-                                itemCount: CategoriesCubit.getInstance(context)
-                                    .venues
-                                    .length,
-                                itemBuilder: (context, index) {
-                                 
-                                  return  ServiceCard(/*category: CategoriesCubit.getInstance(context).venues[index]*/); // Your ServiceCard widget
-                                },
+                              return ListView(
+                                children: const [
+                                  ServiceCard1(),
+                                  ServiceCard4(),
+                                  ServiceCard3()
+                                ],
                               );
                             default:
                               return Container();
                           }
-                          ;
                         },
                       ),
                     ),

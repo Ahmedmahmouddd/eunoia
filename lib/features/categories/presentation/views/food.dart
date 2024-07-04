@@ -94,7 +94,7 @@ class _FoodState extends State<Food> {
               child: ListView.builder(
                 itemCount: 5, // Number of items to scroll
                 itemBuilder: (context, index) {
-                  return const ServiceCard();
+                  return const ServiceCard1();
                 }, // Your ServiceCard widget
               ),
             ),

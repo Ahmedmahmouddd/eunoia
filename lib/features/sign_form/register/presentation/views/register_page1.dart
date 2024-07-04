@@ -1,4 +1,5 @@
 // ignore_for_file: file_names, sized_box_for_whitespace, non_constant_identifier_names, use_build_context_synchronously
+import 'package:eunoia/Screens/navigationBar.dart';
 import 'package:eunoia/features/home/presentation/views/home.dart';
 import 'package:eunoia/Widgets/input_form_field2.dart';
 import 'package:eunoia/core/extensions/sized_box_helper.dart';
@@ -151,8 +152,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                           onPressed: () async {
                             if (validateAndSave()) {
                               setState(() {
-                                isApiCallProcess =
-                                    true; 
+                                isApiCallProcess = true;
                               });
                               RegisterRequestModel model = RegisterRequestModel(
                                 email: email!,
@@ -174,7 +174,8 @@ class _RegisterPage1State extends State<RegisterPage1> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => const Home()));
+                                          builder: (context) =>
+                                              const MainNav()));
                                 } else {
                                   NoFieldCanBeEmptySnackBar(context);
                                   isfieldempty = false;

@@ -17,7 +17,7 @@ class OfferCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
-              image: NetworkImage(topService.avatar ??
+              image: NetworkImage(topService.imageCover ??
                   'https://st4.depositphotos.com/14953852/24787/v/1600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg'),
               fit: BoxFit.fill),
         ),
@@ -31,7 +31,7 @@ class OfferCard extends StatelessWidget {
                 '-20%',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style:  TextStyle(
+                style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Literata',
                   fontSize: 30,
@@ -39,8 +39,9 @@ class OfferCard extends StatelessWidget {
                 ),
               ),
               Text(
-                topService.businessName ?? '',maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                topService.businessName ?? '',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
                   color: Colors.white,
                   fontFamily: 'Literata',
@@ -52,8 +53,9 @@ class OfferCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    topService.businessCategory ?? '',maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                    topService.businessCategory ?? '',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                       color: Colors.white,
                       fontFamily: 'Literata',
