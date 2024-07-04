@@ -40,7 +40,7 @@ class BusinessPage extends StatelessWidget {
               SectionTitle(title: 'Packages'),
               PackageCard(
                   image: 'assets/images/package1.png',
-                  price: '11,000',
+                  price: '15,000',
                   title: 'Outdoor Venue'),
               Padding(
                 padding: EdgeInsets.only(top: 13.0, bottom: 5),

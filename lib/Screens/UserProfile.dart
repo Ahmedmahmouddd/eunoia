@@ -29,7 +29,7 @@ class UserProfile extends StatelessWidget {
             SizedBox(height: 10.h),
             Center(
               child: Text(
-                'Ahmed Mahmoud',
+                'Lewis Hamilton',
                 style: TextStyle(
                   fontSize: 20.sp,
                   fontFamily: 'Literata',
@@ -99,7 +99,6 @@ class UserProfile extends StatelessWidget {
               data: 'Logout',
               ontap: () async {
                 CacheData.clearKey(key: 'token');
-                // ignore: use_build_context_synchronously
                 PersistentNavBarNavigator.pushNewScreen(
                   context,
                   screen: const LoginPage(),
