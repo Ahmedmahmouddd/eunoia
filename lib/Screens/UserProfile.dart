@@ -29,7 +29,7 @@ class UserProfile extends StatelessWidget {
             SizedBox(height: 10.h),
             Center(
               child: Text(
-                'Lewis Hamilton',
+                'Sara Mohamed',
                 style: TextStyle(
                   fontSize: 20.sp,
                   fontFamily: 'Literata',
