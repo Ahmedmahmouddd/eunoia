@@ -1,7 +1,4 @@
 // ignore_for_file: non_constant_identifier_names, file_names
-
-import 'package:eunoia/Widgets/InverseRequestAcceptButton.dart';
-import 'package:eunoia/Widgets/RequestAcceptButton.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 
@@ -41,21 +38,21 @@ class RequestCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Day',
+                        '7',
                         style: TextStyle(
                             fontFamily: Literata,
                             color: Color.fromRGBO(0, 0, 0, 0.79),
                             fontSize: 30),
                       ),
                       Text(
-                        'Mon year',
+                        'Jul 2024',
                         style: TextStyle(
                             fontFamily: Literata,
                             color: Color.fromRGBO(75, 75, 75, 1),
                             fontSize: 16),
                       ),
                       Text(
-                        'weekday',
+                        'Sun',
                         style: TextStyle(
                             fontFamily: Literata,
                             color: Color.fromRGBO(75, 75, 75, 1),
@@ -69,38 +66,57 @@ class RequestCard extends StatelessWidget {
                   width: ScreenWidth * 0.65,
                   color: Colors.white,
                   height: 160,
-                  child: Column(
+                  child: const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Padding(
+                      Padding(
                         padding: EdgeInsets.only(left: 8.0),
                         child: Text(
-                          'Time',
+                          '4:00 PM',
                           style: TextStyle(
                               fontFamily: Literata,
-                              fontWeight: FontWeight.w500,
-                              color: Color.fromRGBO(0, 0, 0, 0.6),
-                              fontSize: 18),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 8.0),
-                        child: Text(
-                          'Notes:',
-                          style: TextStyle(
-                              fontFamily: Literata,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
                               color: Color.fromRGBO(0, 0, 0, 0.6),
                               fontSize: 18),
                         ),
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          InverseRequestAcceptButton(title: 'Decline'),
-                          RequestAcceptButton(title: 'Accept'),
+                          Padding(
+                            padding: EdgeInsets.only(left: 8.0),
+                            child: Text(
+                              'Notes:',
+                              style: TextStyle(
+                                  fontFamily: Literata,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color.fromRGBO(0, 0, 0, 0.6),
+                                  fontSize: 18),
+                            ),
+                          ),
+                          Text(
+                            ' No kids allowed',
+                            style: TextStyle(
+                                fontFamily: Literata,
+                                color: Color.fromRGBO(0, 0, 0, 0.6),
+                                fontSize: 18),
+                          ),
                         ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20, right: 12.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              'Sent',
+                              style: TextStyle(
+                                  fontFamily: 'Literata',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18),
+                            ),
+                          ],
+                        ),
                       )
                     ],
                   ),

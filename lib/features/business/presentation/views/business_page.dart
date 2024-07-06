@@ -11,11 +11,12 @@ class BusinessPage extends StatelessWidget {
   const BusinessPage({super.key});
 
   // Method to launch the URL
-  void _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+  void _launchURL(String urlString) async {
+    final Uri url = Uri.parse(urlString);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
     } else {
-      throw 'Could not launch $url';
+      throw 'Could not launch $urlString';
     }
   }
 
@@ -49,7 +50,8 @@ class BusinessPage extends StatelessWidget {
                 child: Center(
                   child: InkWell(
                     onTap: () {
-                      _launchURL('https://www.google.com/maps/place/Mercure+Ismailia+Forsan+Island+Hotel/@30.5908001,32.2589517,15z/data=!4m9!3m8!1s0x14f8594808a17409:0xa0b58f85a1cbfb6f!5m2!4m1!1i2!8m2!3d30.5908001!4d32.2589517!16s%2Fg%2F1tlr1zz7?entry=ttu');
+                      _launchURL(
+                          'https://www.google.com/maps/place/Mercure+Ismailia+Forsan+Island+Hotel/@30.5908001,32.2589517,15z/data=!4m9!3m8!1s0x14f8594808a17409:0xa0b58f85a1cbfb6f!5m2!4m1!1i2!8m2!3d30.5908001!4d32.2589517!16s%2Fg%2F1tlr1zz7?entry=ttu');
                     },
                     child: Image.asset(
                       'assets/images/mappp.png',

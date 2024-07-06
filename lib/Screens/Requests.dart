@@ -2,7 +2,6 @@
 
 import 'package:eunoia/Widgets/CustomAppBar.dart';
 import 'package:eunoia/Widgets/RequestCard.dart';
-import 'package:eunoia/Widgets/serviceCard.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +20,7 @@ class Requests extends StatelessWidget {
             alignment: Alignment.center,
             child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.90,
-              child: const ServiceCard1(),
+              child: const RequestCard(),
             ),
           );
         },

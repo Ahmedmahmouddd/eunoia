@@ -1,10 +1,9 @@
 // ignore_for_file: file_names, sized_box_for_whitespace, non_constant_identifier_names, use_build_context_synchronously
-import 'package:eunoia/Screens/navigationBar.dart';
-import 'package:eunoia/features/home/presentation/views/home.dart';
 import 'package:eunoia/Widgets/input_form_field2.dart';
 import 'package:eunoia/core/extensions/sized_box_helper.dart';
 import 'package:eunoia/features/sign_form/login/presentation/views/login_page.dart';
 import 'package:eunoia/features/sign_form/register/data/models/register_request_model.dart';
+import 'package:eunoia/features/sign_form/register/presentation/views/register_page2.dart';
 import 'package:eunoia/services/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -165,17 +164,11 @@ class _RegisterPage1State extends State<RegisterPage1> {
                               try {
                                 if (isfieldempty == false) {
                                   await ApiServices.register(model);
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                      content: Text("Registration successful"),
-                                      duration: Duration(seconds: 2),
-                                    ),
-                                  );
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const MainNav()));
+                                              const RegisterPage2()));
                                 } else {
                                   NoFieldCanBeEmptySnackBar(context);
                                   isfieldempty = false;

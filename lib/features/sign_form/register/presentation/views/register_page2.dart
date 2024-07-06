@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
 import 'package:eunoia/features/sign_form/login/presentation/views/login_page.dart';
 import 'package:flutter/material.dart';
-
 import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:eunoia/Screens/navigationBar.dart';
 import 'package:eunoia/features/sign_form/register/presentation/views/register_page3.dart';
@@ -23,7 +22,7 @@ class RegisterPage2 extends StatelessWidget {
           const SizedBox(height: 45),
           const Text('Create account as a',
               style: TextStyle(
-                  fontFamily: 'Source Serif Pro',
+                  fontFamily: 'Literata',
                   fontWeight: FontWeight.w400,
                   fontSize: 26)),
           const SizedBox(height: 22),
@@ -41,38 +40,18 @@ class RegisterPage2 extends StatelessWidget {
               child: InverseCustomButton(
             title: 'Client',
             onTap: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text("Registration successful"),
+                                      duration: Duration(seconds: 2),
+                                    ),
+                                  );
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const MainNav();
               }));
             },
           )),
-          const SizedBox(height: 150),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Already have an account? ',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: const Color.fromRGBO(0, 0, 0, 0.6),
-                      fontSize: smallText,
-                      fontFamily: 'Source Serif Pro')),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return const LoginPage();
-                  }));
-                },
-                child: Text(
-                  'Login',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      color: KprimaryGreen,
-                      fontSize: smallText,
-                      fontFamily: 'Source Serif Pro'),
-                ),
-              ),
-            ],
-          ),
+          
         ],
       ),
     );

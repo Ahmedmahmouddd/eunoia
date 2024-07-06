@@ -8,7 +8,6 @@ import 'package:eunoia/features/forget_password/presentation/views/ForgotPasswor
 import 'package:eunoia/Screens/Requests.dart';
 import 'package:eunoia/Widgets/UserProfileOption.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
-import 'package:eunoia/features/sign_form/login/presentation/views/login_page.dart';
 import 'package:eunoia/features/sign_form/on_boarding/views/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
