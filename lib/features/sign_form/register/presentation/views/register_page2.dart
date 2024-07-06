@@ -1,5 +1,4 @@
 // ignore_for_file: file_names
-import 'package:eunoia/features/sign_form/login/presentation/views/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:eunoia/Screens/navigationBar.dart';
