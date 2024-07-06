@@ -58,7 +58,7 @@ class NearbyCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      nearbyService.owner ?? '',
+                      nearbyService.businessName ?? '',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
