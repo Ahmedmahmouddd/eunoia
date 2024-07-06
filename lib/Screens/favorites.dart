@@ -21,7 +21,7 @@ class Favorites extends StatelessWidget {
             alignment: Alignment.center,
             child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.90,
-              child: const ServiceCard(),
+              child: const ServiceCard1(),
             ),
           );
         },

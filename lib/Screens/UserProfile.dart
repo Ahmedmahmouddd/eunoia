@@ -9,6 +9,7 @@ import 'package:eunoia/Screens/Requests.dart';
 import 'package:eunoia/Widgets/UserProfileOption.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:eunoia/features/sign_form/login/presentation/views/login_page.dart';
+import 'package:eunoia/features/sign_form/on_boarding/views/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -101,7 +102,7 @@ class UserProfile extends StatelessWidget {
                 CacheData.clearKey(key: 'token');
                 PersistentNavBarNavigator.pushNewScreen(
                   context,
-                  screen: const LoginPage(),
+                  screen: const OnBoarding(),
                   withNavBar: false,
                 );
               },

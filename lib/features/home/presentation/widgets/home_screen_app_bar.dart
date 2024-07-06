@@ -1,3 +1,4 @@
+import 'package:eunoia/Screens/favorites.dart';
 import 'package:eunoia/core/Constants/Constants.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class HomeScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
-              'Hey, Sara',
+              'Hey, Ahmed',
               style: TextStyle(
                 fontFamily: 'Literata',
                 fontWeight: FontWeight.normal,
@@ -26,7 +27,11 @@ class HomeScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Favorites();
+                }));
+              },
               child: const Icon(
                 Icons.favorite_border_outlined,
                 size: 29,

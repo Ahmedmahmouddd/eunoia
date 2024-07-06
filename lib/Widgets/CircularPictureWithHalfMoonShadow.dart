@@ -50,7 +50,7 @@ class _CircularPictureWithHalfMoonShadowState
                   image: DecorationImage(
                     image: _image != null
                         ? FileImage(_image!)
-                        : const AssetImage('assets/images/LH44.jpg')
+                        : const AssetImage('assets/images/noimage.jpg')
                             as ImageProvider,
                     fit: BoxFit.cover,
                   ),
